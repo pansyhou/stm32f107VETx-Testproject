@@ -10,6 +10,8 @@
                 "c:\\Users\\pansy\\Desktop\\test1\\Drivers\\CMSIS\\Include",
                 "c:\\Users\\pansy\\Desktop\\test1\\Core\\Src",
                 "c:\\Users\\pansy\\Desktop\\test1\\Control\\can1_ControlMotor",
+                "D:\\keil\\ARM\\ARMCC\\include",
+                "D:\\keil\\ARM\\ARMCC\\include\\rw",
                 "c:\\Users\\pansy\\Desktop\\test1\\MDK-ARM",
                 "c:\\Users\\pansy\\Desktop\\test1\\Drivers\\STM32F4xx_HAL_Driver\\Src"
             ],

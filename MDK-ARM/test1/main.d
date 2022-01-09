@@ -35,3 +35,4 @@ test1\main.o: ../Core/Inc/can.h
 test1\main.o: ../Core/Inc/spi.h
 test1\main.o: ../Core/Inc/usart.h
 test1\main.o: ../Core/Inc/gpio.h
+test1\main.o: ..\Control\can1_ControlMotor\can1_ControlMotor.h

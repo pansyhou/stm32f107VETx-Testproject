@@ -26,7 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "can1_ControlMotor.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -87,15 +87,20 @@ int main(void)
   /* USER CODE BEGIN SysInit */
   
   /* USER CODE END SysInit */
-  MX_NVIC_Init();//接收中断分组
+
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_CAN1_Init();
-
+  MX_SPI1_Init();
+  MX_USART1_UART_Init();
 
   /* Initialize interrupts */
-
+  MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
+  Can1_ControlMotor_Exp_Mian();
+
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -165,7 +170,6 @@ void SystemClock_Config(void)
 static void MX_NVIC_Init(void)
 {
   /* CAN1_RX0_IRQn interrupt configuration */
-  HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_1);
   HAL_NVIC_SetPriority(CAN1_RX0_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(CAN1_RX0_IRQn);
 }

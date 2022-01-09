@@ -38,7 +38,7 @@ extern CAN_HandleTypeDef hcan1;
 /* USER CODE END Private defines */
 
 void MX_CAN1_Init(void);
-void CAN_Filter_Config(void);
+
 /* USER CODE BEGIN Prototypes */
 
 /* USER CODE END Prototypes */

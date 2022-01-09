@@ -1,60 +1,80 @@
-//#include "can1_ControlMotor.h"
-//#include "stm32f4xx_hal_rcc.h"
-//#include "stm32f4xx_hal.h"
-//#include "main.h"
-//#include "stm32f4xx_hal_can.h"
-//void Can1_ControlMotor_Exp_Mian()
-//{
-//    /* 使能相关时钟 */
-//    __HAL_RCC_CAN1_CLK_ENABLE();
-//    __HAL_RCC_GPIOD_CLK_ENABLE();
+#include "can1_ControlMotor.h"
+#include "main.h"
+//引用can1的句柄
+extern CAN_HandleTypeDef hcan1;
 
-//    /* 定义can1的句柄 */
-//    CAN_HandleTypeDef hcan1;
+uint8_t can1Tx[8] = {0, 0xcc};
+uint8_t can1Rx[8] = {0};
+CAN_FilterTypeDef CAN_FilterInitStructure;
+CAN_RxHeaderTypeDef pRxMailbox;
+typedef struct
+{
+    uint16_t angle;
+    uint16_t speed;
+    uint16_t anper;
+    uint16_t temperature;
+} motor_Rx;
+motor_Rx motor1;
 
-//    /* 定义GPIO初始化结构体 */
-//    GPIO_InitTypeDef GPIO_InitStruct;
+void Can1_ControlMotor_Exp_Mian()
+{
+    //相关时钟使能、初始化GPIO口hal自动给我们生成了
+    HAL_CAN_MspInit(&hcan1);
+    // HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_1);
 
-//    /* 定义CAN1发送处理结构体 */
-//    CAN_TxHeaderTypeDef CAN_TxHeaderInitStructure;
+    /* 配置发送结构体 */
+    uint32_t *pTxMailbox;
+    CAN_TxHeaderTypeDef CAN_TxHeaderInitStructure1;
+    CAN_TxHeaderInitStructure1.StdId = 0x200;
+    CAN_TxHeaderInitStructure1.IDE = CAN_ID_STD;
+    CAN_TxHeaderInitStructure1.RTR = CAN_RTR_DATA;
+    CAN_TxHeaderInitStructure1.DLC = 8;
+    CAN_Filter_Config();        //筛选器初始化
+    HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING);    //启动接收
+    HAL_CAN_Start(&hcan1);      //启动传输
+    while (1)
+    {
+        HAL_CAN_AddTxMessage(&hcan1, &CAN_TxHeaderInitStructure1, can1Tx, pTxMailbox);
+    }
+}
 
-//    /* 初始化GPIO口 */
-//    GPIO_InitStruct.Pin = GPIO_PIN_0 | GPIO_PIN_1;
-//    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-//    GPIO_InitStruct.Pull = GPIO_PULLUP;
-//    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-//    GPIO_InitStruct.Alternate = GPIO_AF9_CAN1;
-//    HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+/* 筛选器初始化 */
+void CAN_Filter_Config(void)
+{
 
-//    /* 配置can工作模式 */
-//    hcan1.Instance = CAN1;
-//    hcan1.Init.Prescaler = 3;
-//    hcan1.Init.Mode = CAN_MODE_NORMAL;
-//    hcan1.Init.SyncJumpWidth = CAN_SJW_1TQ;
-//    hcan1.Init.TimeSeg1 = CAN_BS1_8TQ;
-//    hcan1.Init.TimeSeg2 = CAN_BS2_5TQ;
-//    hcan1.Init.TimeTriggeredMode = DISABLE;
-//    hcan1.Init.AutoBusOff = DISABLE;
-//    hcan1.Init.AutoWakeUp = DISABLE;
-//    hcan1.Init.AutoRetransmission = DISABLE;
-//    hcan1.Init.ReceiveFifoLocked = DISABLE;
-//    hcan1.Init.TransmitFifoPriority = DISABLE;
-//    if (HAL_CAN_Init(&hcan1) != HAL_OK)
-//    {
-//        Error_Handler();
-//    }
+    CAN_FilterInitStructure.FilterBank = 0;                      //指定筛选器组0,范围0-13
+    CAN_FilterInitStructure.FilterMode = CAN_FILTERMODE_IDMASK;  //筛选器模式为idlsit
+    CAN_FilterInitStructure.FilterScale = CAN_FILTERSCALE_32BIT; //筛选器位宽为单个16bit
+    CAN_FilterInitStructure.FilterMaskIdHigh = 0x0000;
+    CAN_FilterInitStructure.FilterMaskIdLow = 0x0000;
+    CAN_FilterInitStructure.SlaveStartFilterBank = 14;
+    CAN_FilterInitStructure.FilterFIFOAssignment = CAN_FILTER_FIFO0;
 
-//    uint32_t *pTxMailbox;
-//    uint8_t temp[8] = {3, 51, 3, 51, 1, 1, 1, 1};
-//    CAN_TxHeaderTypeDef CAN_TxHeaderInitStructure1;
-//    CAN_TxHeaderInitStructure1.StdId = 0x200;
-//    CAN_TxHeaderInitStructure1.IDE = CAN_ID_STD;
-//    CAN_TxHeaderInitStructure1.RTR = CAN_RTR_DATA;
-//    CAN_TxHeaderInitStructure1.DLC = 8;
-//    //启动传输
-//    HAL_CAN_Start(&hcan1);
-//    while (1)
-//    {
-//        HAL_CAN_AddTxMessage(&hcan1, &CAN_TxHeaderInitStructure1, temp, pTxMailbox);
-//    }
-//}
+    /* 使能筛选器 */
+    CAN_FilterInitStructure.FilterActivation = ENABLE;
+    HAL_CAN_ConfigFilter(&hcan1, &CAN_FilterInitStructure);
+    if (HAL_CAN_ConfigFilter(&hcan1, &CAN_FilterInitStructure) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    /* 配置接收信息邮箱（？的句柄 */
+    pRxMailbox.StdId = 0x201;
+    pRxMailbox.IDE = CAN_ID_STD;
+    pRxMailbox.RTR = CAN_RTR_DATA;
+    pRxMailbox.DLC = 8;
+}
+
+/* 重定义接收中断回调函数 */
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+{
+  if (hcan->Instance == CAN1)
+  {
+    HAL_CAN_GetRxMessage(hcan, CAN_FILTER_FIFO0, &pRxMailbox, can1Rx); //获取数据
+    /* 处理数据 */
+    motor1.angle=(uint16_t)((can1Rx[0]<<8 | can1Rx[1]));
+    motor1.speed=(uint16_t)((can1Rx[2]<<8 | can1Rx[3]));
+    motor1.anper=(uint16_t)((can1Rx[4]<<8 | can1Rx[5]));
+    motor1.temperature=(uint16_t)((can1Rx[6]));
+  }
+  /* USER CODE END 1 */
+}
