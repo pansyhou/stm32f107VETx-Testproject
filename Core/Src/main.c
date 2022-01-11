@@ -20,6 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "can.h"
+#include "dma.h"
 #include "spi.h"
 #include "usart.h"
 #include "gpio.h"
@@ -36,6 +37,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+uint8_t temp[]="\r\n**** Serial Output Message by DMA ***\r\n   UART DMA Test \r\n   Zxiaoxuan";
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -91,12 +93,19 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_CAN1_Init();
+  MX_DMA_Init();
+  MX_USART3_UART_Init();
   MX_SPI1_Init();
-  MX_USART1_UART_Init();
 
   /* Initialize interrupts */
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
+
+//while(1)
+//{
+//  HAL_UART_Transmit_DMA(&huart3,temp,sizeof(temp));
+//	HAL_Delay(500);
+//}
   Can1_ControlMotor_Exp_Mian();
 
 

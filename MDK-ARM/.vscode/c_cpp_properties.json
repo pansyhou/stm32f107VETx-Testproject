@@ -10,6 +10,7 @@
                 "c:\\Users\\pansy\\Desktop\\test1\\Drivers\\CMSIS\\Include",
                 "c:\\Users\\pansy\\Desktop\\test1\\Core\\Src",
                 "c:\\Users\\pansy\\Desktop\\test1\\Control\\can1_ControlMotor",
+                "c:\\Users\\pansy\\Desktop\\test1\\Control\\PID",
                 "D:\\keil\\ARM\\ARMCC\\include",
                 "D:\\keil\\ARM\\ARMCC\\include\\rw",
                 "c:\\Users\\pansy\\Desktop\\test1\\MDK-ARM",

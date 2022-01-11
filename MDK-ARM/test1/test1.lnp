@@ -3,6 +3,7 @@
 "test1\main.o"
 "test1\gpio.o"
 "test1\can.o"
+"test1\dma.o"
 "test1\spi.o"
 "test1\usart.o"
 "test1\stm32f4xx_it.o"
@@ -27,6 +28,7 @@
 "test1\stm32f4xx_hal_uart.o"
 "test1\system_stm32f4xx.o"
 "test1\can1_controlmotor.o"
+"test1\pid_test_forc620.o"
 --strict --scatter "test1\test1.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

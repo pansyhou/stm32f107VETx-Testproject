@@ -32,7 +32,14 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+typedef struct
+{
+    uint16_t angle;
+    uint16_t speed;
+    uint16_t anper;
+    uint16_t temperature;
+} motor_Rx;
+#include<stdio.h>
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -59,7 +66,14 @@ void Error_Handler(void);
 
 /* Private defines -----------------------------------------------------------*/
 /* USER CODE BEGIN Private defines */
-
+typedef unsigned char uint8; // 无符�? 8 位字符型变量
+typedef signed char int8; // 有符�? 8 位字符型变量
+typedef unsigned short uint16; // 无符�? 16 位短整型变量
+typedef signed short int16; // 有符�? 16 位短整型变量
+typedef unsigned int uint32; // 无符�? 32 位整型变�?
+typedef signed int int32; // 有符�? 32 位整型变�?
+typedef float fp32; // 单精度浮点数�?32 位长度）
+typedef double fp64; // 双精度浮点数�?64 位长度）
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

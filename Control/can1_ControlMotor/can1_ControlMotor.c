@@ -1,22 +1,22 @@
 #include "can1_ControlMotor.h"
-#include "main.h"
 //引用can1的句柄
+extern fp32 PIDcal(PIDTypeDef *pid);
 extern CAN_HandleTypeDef hcan1;
-
-uint8_t can1Tx[8] = {0, 0xcc};
+uint8_t can1Tx[8] = {0};
 uint8_t can1Rx[8] = {0};
 CAN_FilterTypeDef CAN_FilterInitStructure;
 CAN_RxHeaderTypeDef pRxMailbox;
-typedef struct
-{
-    uint16_t angle;
-    uint16_t speed;
-    uint16_t anper;
-    uint16_t temperature;
-} motor_Rx;
+PIDTypeDef C620Control;
+//typedef struct
+//{
+//    uint16_t angle;
+//    uint16_t speed;
+//    uint16_t anper;
+//    uint16_t temperature;
+//} motor_Rx;
 motor_Rx motor1;
-
-void Can1_ControlMotor_Exp_Mian()
+uint16_t output;
+void Can1_ControlMotor_Exp_Mian(void)
 {
     //相关时钟使能、初始化GPIO口hal自动给我们生成了
     HAL_CAN_MspInit(&hcan1);
@@ -29,12 +29,23 @@ void Can1_ControlMotor_Exp_Mian()
     CAN_TxHeaderInitStructure1.IDE = CAN_ID_STD;
     CAN_TxHeaderInitStructure1.RTR = CAN_RTR_DATA;
     CAN_TxHeaderInitStructure1.DLC = 8;
+    C620Control.kp=0.1;
+		C620Control.ki=0.5;
+    C620Control.kd=3;
+    C620Control.H_Limited=5000;
+    C620Control.L_Limited=-1000;
+		C620Control.SetValues=2000;
     CAN_Filter_Config();        //筛选器初始化
     HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING);    //启动接收
     HAL_CAN_Start(&hcan1);      //启动传输
     while (1)
     {
+        C620Control.CurrentValues=motor1.speed;
+        output=PIDcal(&C620Control);
+        can1Tx[0]=output>>8;
+        can1Tx[1]=output;
         HAL_CAN_AddTxMessage(&hcan1, &CAN_TxHeaderInitStructure1, can1Tx, pTxMailbox);
+				HAL_Delay(10);
     }
 }
 

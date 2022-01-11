@@ -1,97 +1,17 @@
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\keil\ARM\ARMCC\Bin'
 Build target 'test1'
-compiling can1_ControlMotor.c...
-..\Control\can1_ControlMotor\can1_ControlMotor.h(5): warning:  #1295-D: Deprecated declaration Can1_ControlMotor_Exp_Mian - give arg types
-  void Can1_ControlMotor_Exp_Mian();
-..\Control\can1_ControlMotor\can1_ControlMotor.h(7): error:  #20: identifier "CAN_HandleTypeDef" is undefined
-  void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)???
-..\Control\can1_ControlMotor\can1_ControlMotor.h(7): error:  #130: expected a "{"
-  void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)???
-..\Control\can1_ControlMotor\can1_ControlMotor.h(7): error:  #7: unrecognized token
-  void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)???
-..\Control\can1_ControlMotor\can1_ControlMotor.h(7): error:  #7: unrecognized token
-  void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)???
-..\Control\can1_ControlMotor\can1_ControlMotor.h(8): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(67): warning:  #12-D: parsing restarts here after previous syntax error
-  {
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(69): error:  #20: identifier "NonMaskableInt_IRQn" is undefined
-    NonMaskableInt_IRQn         = -14,    /*!< 2 Non Maskable Interrupt                                          */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(70): error:  #20: identifier "MemoryManagement_IRQn" is undefined
-    MemoryManagement_IRQn       = -12,    /*!< 4 Cortex-M4 Memory Management Interrupt                           */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(71): error:  #20: identifier "BusFault_IRQn" is undefined
-    BusFault_IRQn               = -11,    /*!< 5 Cortex-M4 Bus Fault Interrupt                                   */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(72): error:  #20: identifier "UsageFault_IRQn" is undefined
-    UsageFault_IRQn             = -10,    /*!< 6 Cortex-M4 Usage Fault Interrupt                                 */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(73): error:  #20: identifier "SVCall_IRQn" is undefined
-    SVCall_IRQn                 = -5,     /*!< 11 Cortex-M4 SV Call Interrupt                                    */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(74): error:  #20: identifier "DebugMonitor_IRQn" is undefined
-    DebugMonitor_IRQn           = -4,     /*!< 12 Cortex-M4 Debug Monitor Interrupt                              */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(75): error:  #20: identifier "PendSV_IRQn" is undefined
-    PendSV_IRQn                 = -2,     /*!< 14 Cortex-M4 Pend SV Interrupt                                    */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(76): error:  #20: identifier "SysTick_IRQn" is undefined
-    SysTick_IRQn                = -1,     /*!< 15 Cortex-M4 System Tick Interrupt                                */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(78): error:  #20: identifier "WWDG_IRQn" is undefined
-    WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                                         */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(79): error:  #20: identifier "PVD_IRQn" is undefined
-    PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt                         */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(80): error:  #20: identifier "TAMP_STAMP_IRQn" is undefined
-    TAMP_STAMP_IRQn             = 2,      /*!< Tamper and TimeStamp interrupts through the EXTI line             */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(81): error:  #20: identifier "RTC_WKUP_IRQn" is undefined
-    RTC_WKUP_IRQn               = 3,      /*!< RTC Wakeup interrupt through the EXTI line                        */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(82): error:  #20: identifier "FLASH_IRQn" is undefined
-    FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                                            */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(83): error:  #20: identifier "RCC_IRQn" is undefined
-    RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                              */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(84): error:  #20: identifier "EXTI0_IRQn" is undefined
-    EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                              */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(85): error:  #20: identifier "EXTI1_IRQn" is undefined
-    EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                              */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(86): error:  #20: identifier "EXTI2_IRQn" is undefined
-    EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                              */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(87): error:  #20: identifier "EXTI3_IRQn" is undefined
-    EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                              */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(88): error:  #20: identifier "EXTI4_IRQn" is undefined
-    EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                              */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(89): error:  #20: identifier "DMA1_Stream0_IRQn" is undefined
-    DMA1_Stream0_IRQn           = 11,     /*!< DMA1 Stream 0 global Interrupt                                    */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(90): error:  #20: identifier "DMA1_Stream1_IRQn" is undefined
-    DMA1_Stream1_IRQn           = 12,     /*!< DMA1 Stream 1 global Interrupt                                    */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(91): error:  #20: identifier "DMA1_Stream2_IRQn" is undefined
-    DMA1_Stream2_IRQn           = 13,     /*!< DMA1 Stream 2 global Interrupt                                    */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(92): error:  #20: identifier "DMA1_Stream3_IRQn" is undefined
-    DMA1_Stream3_IRQn           = 14,     /*!< DMA1 Stream 3 global Interrupt                                    */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(93): error:  #20: identifier "DMA1_Stream4_IRQn" is undefined
-    DMA1_Stream4_IRQn           = 15,     /*!< DMA1 Stream 4 global Interrupt                                    */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(94): error:  #20: identifier "DMA1_Stream5_IRQn" is undefined
-    DMA1_Stream5_IRQn           = 16,     /*!< DMA1 Stream 5 global Interrupt                                    */
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h(95): error:  #20: identifier "DMA1_Stream6_IRQn" is undefined
-    DMA1_Stream6_IRQn           = 17,     /*!< DMA1 Stream 6 global Interrupt                                    */
-..\Control\can1_ControlMotor\can1_ControlMotor.c: 3 warnings, 30 errors
-compiling main.c...
-..\Control\can1_ControlMotor\can1_ControlMotor.h(5): warning:  #1295-D: Deprecated declaration Can1_ControlMotor_Exp_Mian - give arg types
-  void Can1_ControlMotor_Exp_Mian();
-..\Control\can1_ControlMotor\can1_ControlMotor.h(7): error:  #130: expected a "{"
-  void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)???
-..\Control\can1_ControlMotor\can1_ControlMotor.h(7): error:  #7: unrecognized token
-  void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)???
-..\Control\can1_ControlMotor\can1_ControlMotor.h(7): error:  #7: unrecognized token
-  void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)???
-..\Control\can1_ControlMotor\can1_ControlMotor.h(8): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Core/Src/main.c(69): warning:  #12-D: parsing restarts here after previous syntax error
-  {
-../Core/Src/main.c(85): warning:  #223-D: function "SystemClock_Config" declared implicitly
-    SystemClock_Config();
-../Core/Src/main.c(98): warning:  #223-D: function "MX_NVIC_Init" declared implicitly
-    MX_NVIC_Init();
-../Core/Src/main.c(127): error:  #159: declaration is incompatible with previous "SystemClock_Config"  (declared at line 85)
-  void SystemClock_Config(void)
-../Core/Src/main.c(170): error:  #159: declaration is incompatible with previous "MX_NVIC_Init"  (declared at line 98)
-  static void MX_NVIC_Init(void)
-../Core/Src/main.c(170): warning:  #177-D: function "MX_NVIC_Init"  was declared but never referenced
-  static void MX_NVIC_Init(void)
-../Core/Src/main.c: 6 warnings, 5 errors
-"test1\test1.axf" - 35 Error(s), 9 Warning(s).
+compiling PID_Test_forC620.c...
+..\Control\PID\PID_Test_forC620.c(26): error:  #136: struct "<unnamed>"  has no field "Output_Amper"
+      motor->Output_Amper = motor->P_Out + motor->I_out + motor->D_Out;
+..\Control\PID\PID_Test_forC620.c(29): error:  #136: struct "<unnamed>"  has no field "Output_Amper"
+      motor->Output_Amper = limit(motor->Output_Amper, 10000, -1000);
+..\Control\PID\PID_Test_forC620.c(29): error:  #136: struct "<unnamed>"  has no field "Output_Amper"
+      motor->Output_Amper = limit(motor->Output_Amper, 10000, -1000);
+..\Control\PID\PID_Test_forC620.c(32): error:  #136: struct "<unnamed>"  has no field "Output_Amper"
+      return motor->Output_Amper;
+..\Control\PID\PID_Test_forC620.c(40): warning:  #940-D: missing return statement at end of non-void function "PIDcal" 
+  }
+..\Control\PID\PID_Test_forC620.c: 1 warning, 4 errors
+"test1\test1.axf" - 4 Error(s), 1 Warning(s).
 Target not created.
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02

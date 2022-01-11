@@ -32,3 +32,4 @@ test1\can1_controlmotor.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr
 test1\can1_controlmotor.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 test1\can1_controlmotor.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 test1\can1_controlmotor.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+test1\can1_controlmotor.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
