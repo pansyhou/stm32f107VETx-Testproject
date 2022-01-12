@@ -34,10 +34,10 @@ extern "C" {
 /* USER CODE BEGIN Includes */
 typedef struct
 {
-    uint16_t angle;
-    uint16_t speed;
-    uint16_t anper;
-    uint16_t temperature;
+    int16_t angle;
+    int16_t speed;
+    int16_t anper;
+    int16_t temperature;
 } motor_Rx;
 #include<stdio.h>
 /* USER CODE END Includes */

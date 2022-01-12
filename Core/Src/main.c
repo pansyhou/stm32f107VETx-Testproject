@@ -101,11 +101,6 @@ int main(void)
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
 
-//while(1)
-//{
-//  HAL_UART_Transmit_DMA(&huart3,temp,sizeof(temp));
-//	HAL_Delay(500);
-//}
   Can1_ControlMotor_Exp_Mian();
 
 

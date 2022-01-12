@@ -15,12 +15,13 @@ typedef struct
     fp32 error[2];//第一个是上一次的差值，第二个是最新的差值
 
     fp32 SetValues;//设定值
+    fp32 Last_CurrentValues;
     fp32 CurrentValues;//当前值 
 
     fp32 H_Limited;//上限
     fp32 L_Limited;//上限
 
-
+    int Circl_Cut;
 
     fp32 Output;
 }PIDTypeDef;
