@@ -30,5 +30,10 @@ test1\stm32f4xx_hal_msp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fla
 test1\stm32f4xx_hal_msp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 test1\stm32f4xx_hal_msp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 test1\stm32f4xx_hal_msp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
+test1\stm32f4xx_hal_msp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
+test1\stm32f4xx_hal_msp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 test1\stm32f4xx_hal_msp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+test1\stm32f4xx_hal_msp.o: ..\Control\TIM_1s_LED\TIM_LED.h
+test1\stm32f4xx_hal_msp.o: ../Core/Inc/main.h
+test1\stm32f4xx_hal_msp.o: ../Core/Inc/tim.h
 test1\stm32f4xx_hal_msp.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h

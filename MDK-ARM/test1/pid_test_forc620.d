@@ -30,6 +30,11 @@ test1\pid_test_forc620.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flas
 test1\pid_test_forc620.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 test1\pid_test_forc620.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 test1\pid_test_forc620.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
+test1\pid_test_forc620.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
+test1\pid_test_forc620.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 test1\pid_test_forc620.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+test1\pid_test_forc620.o: ..\Control\TIM_1s_LED\TIM_LED.h
+test1\pid_test_forc620.o: ../Core/Inc/main.h
+test1\pid_test_forc620.o: ../Core/Inc/tim.h
 test1\pid_test_forc620.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
 test1\pid_test_forc620.o: ..\Control\PID\PID_Test_forC620.h

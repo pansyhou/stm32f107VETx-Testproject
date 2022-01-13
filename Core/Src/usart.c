@@ -84,8 +84,8 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
 
     /* USART3 DMA Init */
     /* USART3_TX Init */
-    hdma_usart3_tx.Instance = DMA1_Stream4;
-    hdma_usart3_tx.Init.Channel = DMA_CHANNEL_7;
+    hdma_usart3_tx.Instance = DMA1_Stream3;
+    hdma_usart3_tx.Init.Channel = DMA_CHANNEL_4;
     hdma_usart3_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
     hdma_usart3_tx.Init.PeriphInc = DMA_PINC_DISABLE;
     hdma_usart3_tx.Init.MemInc = DMA_MINC_ENABLE;
@@ -158,13 +158,16 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 }
 
 /* USER CODE BEGIN 1 */
-#pragma import(__use_no_semihosting)  //确保没有�? C 库链接使用半主机的函�?
+/**
+ * @brief ???putc?????printf
+ * 
+ */
+#pragma import(__use_no_semihosting)  
 
-void _sys_exit(int x)     //定义_sys_exit()以避免使用半主机模式 
-
+void _sys_exit(int x)     
 { x = x; }   
 
-struct __FILE  //标准库需要的支持函数 
+struct __FILE  
 
 { 
 
@@ -172,14 +175,16 @@ struct __FILE  //标准库需要的支持函数
 
 }; 
 
-/* FILE is typedef�? d in stdio.h. */ 
 
 FILE __stdout;   
 
  int fputc(int ch, FILE *f)
 {      
-    uint8_t temp[1]={ch};
-    HAL_UART_Transmit(&huart3,temp,1,2);        //UartHandle是串口的句柄
+    uint8_t buff[1]={ch};
+    while (HAL_OK != HAL_UART_Transmit_DMA(&huart3, (uint8_t *) &ch, 1))
+  {
+    ;
+  }    
 		return ch;
 }
 /* USER CODE END 1 */

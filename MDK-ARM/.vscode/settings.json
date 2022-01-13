@@ -2,6 +2,7 @@
     "files.associations": {
         "stm32f4xx_hal.h": "c",
         "stm32f4xx_hal_can.h": "c",
-        "stm32f4xx_ll_rcc.h": "c"
+        "stm32f4xx_ll_rcc.h": "c",
+        "cstdio": "c"
     }
 }

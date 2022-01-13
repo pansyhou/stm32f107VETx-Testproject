@@ -22,6 +22,7 @@
 #include "can.h"
 #include "dma.h"
 #include "spi.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -96,12 +97,16 @@ int main(void)
   MX_DMA_Init();
   MX_USART3_UART_Init();
   MX_SPI1_Init();
+  MX_TIM7_Init();
+  MX_TIM6_Init();	
+  MX_TIM4_Init();
 
   /* Initialize interrupts */
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
-
-  Can1_ControlMotor_Exp_Mian();
+	printf("\r\n**** Serial Output Message by DMA ***\r\n   UART DMA Test \r\n  我 我是我是");
+  PWM_LED();
+  //Can1_ControlMotor_Exp_Mian();
 
 
 
@@ -113,10 +118,6 @@ int main(void)
 
   while (1)
   {
-		HAL_GPIO_WritePin(GPIOE,GPIO_PIN_0,GPIO_PIN_RESET);
-		HAL_Delay(500);
-		HAL_GPIO_WritePin(GPIOE,GPIO_PIN_0,GPIO_PIN_SET);
-		HAL_Delay(500);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -176,6 +177,9 @@ static void MX_NVIC_Init(void)
   /* CAN1_RX0_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(CAN1_RX0_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(CAN1_RX0_IRQn);
+  /* TIM7_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(TIM7_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(TIM7_IRQn);
 }
 
 /* USER CODE BEGIN 4 */
