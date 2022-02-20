@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'test1' 
+ * Project: 'Infantry_2022' 
  * Target:  'test1' 
  */
 

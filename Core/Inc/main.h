@@ -82,5 +82,3 @@ typedef double fp64; // 双精度浮点数�?64 位长度）
 #endif
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

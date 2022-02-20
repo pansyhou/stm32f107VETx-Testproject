@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "cmsis_os.h"
 #include "can.h"
 #include "dma.h"
 #include "spi.h"
@@ -54,6 +55,7 @@ uint8_t temp[]="\r\n**** Serial Output Message by DMA ***\r\n   UART DMA Test \r
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+void MX_FREERTOS_Init(void);
 static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -94,17 +96,18 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_CAN1_Init();
-  MX_DMA_Init();
-  MX_USART3_UART_Init();
   MX_SPI1_Init();
   MX_TIM7_Init();
-  MX_TIM6_Init();	
+  MX_TIM6_Init();
+  MX_DMA_Init();
+  MX_USART1_UART_Init();
   MX_TIM4_Init();
+  MX_CAN2_Init();
 
   /* Initialize interrupts */
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
-	printf("\r\n**** Serial Output Message by DMA ***\r\n   UART DMA Test \r\n  ÎÒ ÎÒÊÇÎÒÊÇ");
+	printf("\r\n**** Serial Output Message by DMA ***\r\n   UART DMA Test \r\n  ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
   PWM_LED();
   //Can1_ControlMotor_Exp_Mian();
 
@@ -112,6 +115,12 @@ int main(void)
 
   /* USER CODE END 2 */
 
+  /* Call init function for freertos objects (in freertos.c) */
+  MX_FREERTOS_Init();
+  /* Start scheduler */
+  osKernelStart();
+
+  /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
@@ -175,10 +184,10 @@ void SystemClock_Config(void)
 static void MX_NVIC_Init(void)
 {
   /* CAN1_RX0_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(CAN1_RX0_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(CAN1_RX0_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(CAN1_RX0_IRQn);
   /* TIM7_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(TIM7_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(TIM7_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(TIM7_IRQn);
 }
 
@@ -218,4 +227,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 }
 #endif /* USE_FULL_ASSERT */
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

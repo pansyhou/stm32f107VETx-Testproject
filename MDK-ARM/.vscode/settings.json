@@ -3,6 +3,18 @@
         "stm32f4xx_hal.h": "c",
         "stm32f4xx_hal_can.h": "c",
         "stm32f4xx_ll_rcc.h": "c",
-        "cstdio": "c"
+        "cstdio": "c",
+        "sysconfig.h": "c",
+        "task_chassis.h": "c",
+        "can1_receive.h": "c",
+        "pid.h": "c",
+        "pid_test_forc620.h": "c",
+        "remotecontrol.h": "c",
+        "chassis_behaviour.h": "c",
+        "freertos.h": "c",
+        "rmmotor.h": "c",
+        "maths.h": "c",
+        "task.h": "c",
+        "chassis_app.h": "c"
     }
 }
