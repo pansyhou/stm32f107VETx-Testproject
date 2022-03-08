@@ -12,8 +12,6 @@
 #ifndef  __REMOTECONTROL_H
 #define  __REMOTECONTROL_H
 
-#include "SYSConfig.h"
-
 /*
  * 遥控器接收数据结构体*/
  //__packed为字节对齐
@@ -44,10 +42,13 @@ typedef __packed struct
 
 
 
-void RC_UART_IRQHandler(UART_HandleTypeDef *huart);
-int  RC_DataProcess(volatile const uint8_t *pData,RC_Ctl_t *RC_CTRL);
-void RC_Init(uint8_t *Rx1_Buff,uint8_t *Rx2_Buff,uint16_t Data_Buff_Lenth);
-
-
+void    RC_UART_IRQHandler(UART_HandleTypeDef *huart);
+int     RC_DataProcess(volatile const uint8_t *pData,RC_Ctl_t *RC_CTRL);
+void    RC_Init(uint8_t *Rx1_Buff,uint8_t *Rx2_Buff,uint16_t Data_Buff_Lenth);
+const   RC_Ctl_t *RC_Get_RC_Pointer(void);
+static  int16_t RC_abs(int16_t num);
+uint8_t RC_Check_Data_IS_ERROR(void);
+void    RC_Restart(uint16_t dma_buf_num);
+void    RC_DataReload(void);
 #endif
 

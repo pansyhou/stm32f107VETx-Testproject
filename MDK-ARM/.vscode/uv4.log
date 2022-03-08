@@ -1,37 +1,105 @@
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'E:\ApplicationDocs\keilCore\ARM\ARMCC\Bin'
-Build target 'test1'
-compiling Can1_Receive.c...
-../Core/Inc/SYSConfig.h(34): error:  #5: cannot open source input file "Can2_Receive.h": No such file or directory
-  #include "Can2_Receive.h"
-..\Control\CAN\Can1_Receive.c: 0 warnings, 1 error
-compiling rmmotor.c...
-../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
-  #include "Can1_Receive.h"
-..\ALGORITHM\rmmotor.c: 0 warnings, 1 error
-compiling chassis_behaviour.c...
-../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
-  #include "Can1_Receive.h"
-..\Control\chassis_behaviour\chassis_behaviour.c: 0 warnings, 1 error
+Build target 'Infantry_2022'
 compiling TASK_Chassis.c...
 ../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
   #include "Can1_Receive.h"
 ..\TASK\TASK_Chassis.c: 0 warnings, 1 error
-compiling Can2_Receive.c...
+compiling Can1_Receive.c...
+../Core/Inc/SYSConfig.h(34): error:  #5: cannot open source input file "Can2_Receive.h": No such file or directory
+  #include "Can2_Receive.h"
+..\Control\CAN\Can1_Receive.c: 0 warnings, 1 error
+compiling chassis_app.c...
+..\Control\chassis_app\chassis_app.h(6): error:  #20: identifier "int16_t" is undefined
+  void Chassis_app_CAN1_SendMsg(int16_t ESC_201,int16_t ESC_202,int16_t ESC_203,int16_t ESC_204);//通过CAN1发送四个电机的信息
+..\Control\chassis_app\chassis_app.h(6): error:  #20: identifier "int16_t" is undefined
+  void Chassis_app_CAN1_SendMsg(int16_t ESC_201,int16_t ESC_202,int16_t ESC_203,int16_t ESC_204);//通过CAN1发送四个电机的信息
+..\Control\chassis_app\chassis_app.h(6): error:  #20: identifier "int16_t" is undefined
+  void Chassis_app_CAN1_SendMsg(int16_t ESC_201,int16_t ESC_202,int16_t ESC_203,int16_t ESC_204);//通过CAN1发送四个电机的信息
+..\Control\chassis_app\chassis_app.h(6): error:  #20: identifier "int16_t" is undefined
+  void Chassis_app_CAN1_SendMsg(int16_t ESC_201,int16_t ESC_202,int16_t ESC_203,int16_t ESC_204);//通过CAN1发送四个电机的信息
+..\Control\chassis_app\chassis_app.h(7): error:  #20: identifier "int16_t" is undefined
+  void Chassis_app_CAN2_SendMsg(int16_t ESC_201,int16_t ESC_202,int16_t ESC_203,int16_t ESC_204);//通过CAN2发送四个电机的信息
+..\Control\chassis_app\chassis_app.h(7): error:  #20: identifier "int16_t" is undefined
+  void Chassis_app_CAN2_SendMsg(int16_t ESC_201,int16_t ESC_202,int16_t ESC_203,int16_t ESC_204);//通过CAN2发送四个电机的信息
+..\Control\chassis_app\chassis_app.h(7): error:  #20: identifier "int16_t" is undefined
+  void Chassis_app_CAN2_SendMsg(int16_t ESC_201,int16_t ESC_202,int16_t ESC_203,int16_t ESC_204);//通过CAN2发送四个电机的信息
+..\Control\chassis_app\chassis_app.h(7): error:  #20: identifier "int16_t" is undefined
+  void Chassis_app_CAN2_SendMsg(int16_t ESC_201,int16_t ESC_202,int16_t ESC_203,int16_t ESC_204);//通过CAN2发送四个电机的信息
+..\Control\chassis_app\chassis_app.h(8): error:  #20: identifier "CAN_Motor_Measure_Data" is undefined
+  void Chassis_app_YAW_SendMsg(const CAN_Motor_Measure_Data *Can_YAW_Send);//底盘发送YAW数据到云台板
 ../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
   #include "Can1_Receive.h"
-..\Control\CAN\Can2_Receive.c: 0 warnings, 1 error
+..\Control\chassis_app\chassis_app.c: 0 warnings, 10 errors
 compiling pid.c...
 ../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
   #include "Can1_Receive.h"
 ..\ALGORITHM\pid.c: 0 warnings, 1 error
-compiling RemoteControl.c...
+compiling gimbal_app.c...
 ../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
   #include "Can1_Receive.h"
-..\Control\RemoteControl\RemoteControl.c: 0 warnings, 1 error
+..\Control\gimbal_app\gimbal_app.c: 0 warnings, 1 error
+compiling rmmotor.c...
+../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+  #include "Can1_Receive.h"
+..\ALGORITHM\rmmotor.c: 0 warnings, 1 error
 compiling maths.c...
 ../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
   #include "Can1_Receive.h"
 ..\ALGORITHM\maths.c: 0 warnings, 1 error
-"test1\test1.axf" - 8 Error(s), 0 Warning(s).
+compiling chassis_behaviour.c...
+../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+  #include "Can1_Receive.h"
+..\Control\chassis_behaviour\chassis_behaviour.c: 0 warnings, 1 error
+compiling RemoteControl.c...
+..\Control\RemoteControl\RemoteControl.h(22): error:  #20: identifier "uint16_t" is undefined
+          uint16_t ch0;
+..\Control\RemoteControl\RemoteControl.h(23): error:  #20: identifier "uint16_t" is undefined
+          uint16_t ch1;
+..\Control\RemoteControl\RemoteControl.h(24): error:  #20: identifier "uint16_t" is undefined
+          uint16_t ch2;
+..\Control\RemoteControl\RemoteControl.h(25): error:  #20: identifier "uint16_t" is undefined
+          uint16_t ch3;
+..\Control\RemoteControl\RemoteControl.h(26): error:  #20: identifier "uint8_t" is undefined
+          uint8_t s1;
+..\Control\RemoteControl\RemoteControl.h(27): error:  #20: identifier "uint8_t" is undefined
+          uint8_t s2;
+..\Control\RemoteControl\RemoteControl.h(31): error:  #20: identifier "int16_t" is undefined
+          int16_t x;
+..\Control\RemoteControl\RemoteControl.h(32): error:  #20: identifier "int16_t" is undefined
+          int16_t y;
+..\Control\RemoteControl\RemoteControl.h(33): error:  #20: identifier "int16_t" is undefined
+          int16_t z;
+..\Control\RemoteControl\RemoteControl.h(34): error:  #20: identifier "uint8_t" is undefined
+          uint8_t press_l;
+..\Control\RemoteControl\RemoteControl.h(35): error:  #20: identifier "uint8_t" is undefined
+          uint8_t press_r;
+..\Control\RemoteControl\RemoteControl.h(39): error:  #20: identifier "uint16_t" is undefined
+          uint16_t v;
+..\Control\RemoteControl\RemoteControl.h(45): error:  #20: identifier "UART_HandleTypeDef" is undefined
+  void    RC_UART_IRQHandler(UART_HandleTypeDef *huart);
+..\Control\RemoteControl\RemoteControl.h(46): error:  #20: identifier "uint8_t" is undefined
+  int     RC_DataProcess(volatile const uint8_t *pData,RC_Ctl_t *RC_CTRL);
+..\Control\RemoteControl\RemoteControl.h(47): error:  #20: identifier "uint8_t" is undefined
+  void    RC_Init(uint8_t *Rx1_Buff,uint8_t *Rx2_Buff,uint16_t Data_Buff_Lenth);
+..\Control\RemoteControl\RemoteControl.h(47): error:  #20: identifier "uint8_t" is undefined
+  void    RC_Init(uint8_t *Rx1_Buff,uint8_t *Rx2_Buff,uint16_t Data_Buff_Lenth);
+..\Control\RemoteControl\RemoteControl.h(47): error:  #20: identifier "uint16_t" is undefined
+  void    RC_Init(uint8_t *Rx1_Buff,uint8_t *Rx2_Buff,uint16_t Data_Buff_Lenth);
+..\Control\RemoteControl\RemoteControl.h(49): error:  #20: identifier "int16_t" is undefined
+  static  int16_t RC_abs(int16_t num);
+..\Control\RemoteControl\RemoteControl.h(49): error:  #20: identifier "int16_t" is undefined
+  static  int16_t RC_abs(int16_t num);
+..\Control\RemoteControl\RemoteControl.h(50): error:  #20: identifier "uint8_t" is undefined
+  uint8_t RC_Check_Data_IS_ERROR(void);
+..\Control\RemoteControl\RemoteControl.h(51): error:  #20: identifier "uint16_t" is undefined
+  void    RC_Restart(uint16_t dma_buf_num);
+../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+  #include "Can1_Receive.h"
+..\Control\RemoteControl\RemoteControl.c: 0 warnings, 22 errors
+compiling Can2_Receive.c...
+../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+  #include "Can1_Receive.h"
+..\Control\CAN\Can2_Receive.c: 0 warnings, 1 error
+"test1\Infantry_2022.axf" - 40 Error(s), 0 Warning(s).
 Target not created.
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:04

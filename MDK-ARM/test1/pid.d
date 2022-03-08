@@ -41,4 +41,3 @@ test1\pid.o: ../Core/Inc/tim.h
 test1\pid.o: E:\ApplicationDocs\keilCore\ARM\ARMCC\Bin\..\include\stdio.h
 test1\pid.o: E:\ApplicationDocs\keilCore\ARM\ARMCC\Bin\..\include\stdlib.h
 test1\pid.o: ..\Control\RemoteControl\RemoteControl.h
-test1\pid.o: ../Core/Inc/SYSConfig.h

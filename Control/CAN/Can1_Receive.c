@@ -15,6 +15,19 @@ void CAN1_Filter_Config(void);                                      //CAN1滤波
 void CAN1_Chassis_Receive(CAN_HandleTypeDef *hcan);                 //CAN1接收（大概是想收底盘四个电机
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);    //重定义CAN回调函数
 
+extern Chassis_Control_t chassis_control;
+
+
+const void CAN1_Get_ChassisMotor_Pointer(void)
+{
+    //直接霸王硬上弓赋值
+    uint8_t i=0;
+    for ( i = 0; i < 4; i++)
+    {
+        chassis_control.motor[i].Chassis_Motor_Measured_Data=&motor_Chassis[i];
+    }
+}
+
 
 
 /************************** Dongguan-University of Technology -ACE**************************

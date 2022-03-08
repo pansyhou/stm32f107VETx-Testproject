@@ -420,82 +420,6 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x620A66F9)
 I (..\Control\TIM_1s_LED\TIM_LED.h)(0x61F52826)
 I (../Core/Inc/tim.h)(0x620A6822)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdio.h)(0x60252374)
-F (..\Control\can1_ControlMotor\can1_ControlMotor.c)(0x61F5398E)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\can1_controlmotor.o --omf_browse test1\can1_controlmotor.crf --depend test1\can1_controlmotor.d)
-I (..\Control\can1_ControlMotor\can1_ControlMotor.h)(0x61F5398E)
-I (../Core/Inc/main.h)(0x620A6823)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x620A66F9)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x620A6823)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x620A66F9)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x620A66F9)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x620A66F9)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x620A66B1)
-I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdint.h)(0x6025237E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x620A66B1)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x620A66B1)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x620A66B1)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x620A66B1)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x620A66F9)
-I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stddef.h)(0x6025237E)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x620A66F9)
-I (..\Control\TIM_1s_LED\TIM_LED.h)(0x61F52826)
-I (../Core/Inc/tim.h)(0x620A6822)
-I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdio.h)(0x60252374)
-F (..\Control\PID\PID_Test_forC620.c)(0x61DED106)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\pid_test_forc620.o --omf_browse test1\pid_test_forc620.crf --depend test1\pid_test_forc620.d)
-I (../Core/Inc/main.h)(0x620A6823)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x620A66F9)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x620A6823)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x620A66F9)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x620A66F9)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x620A66F9)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x620A66B1)
-I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdint.h)(0x6025237E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x620A66B1)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x620A66B1)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x620A66B1)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x620A66B1)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x620A66F9)
-I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stddef.h)(0x6025237E)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x620A66F9)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x620A66F9)
-I (..\Control\TIM_1s_LED\TIM_LED.h)(0x61F52826)
-I (../Core/Inc/tim.h)(0x620A6822)
-I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdio.h)(0x60252374)
-I (..\Control\PID\PID_Test_forC620.h)(0x61DEC159)
 F (..\Control\TIM_1s_LED\TIM_LED.c)(0x61F5398E)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\tim_led.o --omf_browse test1\tim_led.crf --depend test1\tim_led.d)
 I (..\Control\TIM_1s_LED\TIM_LED.h)(0x61F52826)
 I (../Core/Inc/main.h)(0x620A6823)
@@ -533,9 +457,9 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x620A66F9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x620A66F9)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (../Core/Inc/tim.h)(0x620A6822)
-F (..\Control\RemoteControl\RemoteControl.c)(0x6207BAAC)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\remotecontrol.o --omf_browse test1\remotecontrol.crf --depend test1\remotecontrol.d)
-I (..\Control\RemoteControl\RemoteControl.h)(0x620C78E1)
-I (../Core/Inc/SYSConfig.h)(0x6212074B)
+F (..\Control\RemoteControl\RemoteControl.c)(0x6212731F)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\remotecontrol.o --omf_browse test1\remotecontrol.crf --depend test1\remotecontrol.d)
+I (..\Control\RemoteControl\RemoteControl.h)(0x621264A9)
+I (../Core/Inc/SYSConfig.h)(0x6224B81E)
 I (../Core/Inc/main.h)(0x620A6823)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x620A66F9)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x620A6823)
@@ -573,9 +497,9 @@ I (..\Control\TIM_1s_LED\TIM_LED.h)(0x61F52826)
 I (../Core/Inc/tim.h)(0x620A6822)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdlib.h)(0x60252374)
-F (..\Control\CAN\Can1_Receive.c)(0x6210B9BF)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\can1_receive.o --omf_browse test1\can1_receive.crf --depend test1\can1_receive.d)
-I (..\Control\CAN\Can1_Receive.h)(0x6210B99E)
-I (../Core/Inc/SYSConfig.h)(0x6212074B)
+F (..\Control\CAN\Can1_Receive.c)(0x62127042)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\can1_receive.o --omf_browse test1\can1_receive.crf --depend test1\can1_receive.d)
+I (..\Control\CAN\Can1_Receive.h)(0x6212705F)
+I (../Core/Inc/SYSConfig.h)(0x6224B81E)
 I (../Core/Inc/main.h)(0x620A6823)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x620A66F9)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x620A6823)
@@ -613,10 +537,10 @@ I (..\Control\TIM_1s_LED\TIM_LED.h)(0x61F52826)
 I (../Core/Inc/tim.h)(0x620A6822)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdlib.h)(0x60252374)
-I (..\Control\RemoteControl\RemoteControl.h)(0x620C78E1)
+I (..\Control\RemoteControl\RemoteControl.h)(0x621264A9)
 F (..\Control\CAN\Can2_Receive.c)(0x620BAF64)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\can2_receive.o --omf_browse test1\can2_receive.crf --depend test1\can2_receive.d)
 I (..\Control\CAN\Can2_Receive.h)(0x620BAF87)
-I (../Core/Inc/SYSConfig.h)(0x6212074B)
+I (../Core/Inc/SYSConfig.h)(0x6224B81E)
 I (../Core/Inc/main.h)(0x620A6823)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x620A66F9)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x620A6823)
@@ -654,10 +578,10 @@ I (..\Control\TIM_1s_LED\TIM_LED.h)(0x61F52826)
 I (../Core/Inc/tim.h)(0x620A6822)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdlib.h)(0x60252374)
-I (..\Control\RemoteControl\RemoteControl.h)(0x620C78E1)
+I (..\Control\RemoteControl\RemoteControl.h)(0x621264A9)
 F (..\Control\chassis_behaviour\chassis_behaviour.c)(0x620EEEFF)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\chassis_behaviour.o --omf_browse test1\chassis_behaviour.crf --depend test1\chassis_behaviour.d)
 I (..\Control\chassis_behaviour\chassis_behaviour.h)(0x620EEF34)
-I (../Core/Inc/SYSConfig.h)(0x6212074B)
+I (../Core/Inc/SYSConfig.h)(0x6224B81E)
 I (../Core/Inc/main.h)(0x620A6823)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x620A66F9)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x620A6823)
@@ -695,10 +619,10 @@ I (..\Control\TIM_1s_LED\TIM_LED.h)(0x61F52826)
 I (../Core/Inc/tim.h)(0x620A6822)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdlib.h)(0x60252374)
-I (..\Control\RemoteControl\RemoteControl.h)(0x620C78E1)
+I (..\Control\RemoteControl\RemoteControl.h)(0x621264A9)
 F (..\Control\chassis_app\chassis_app.c)(0x62120769)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\chassis_app.o --omf_browse test1\chassis_app.crf --depend test1\chassis_app.d)
-I (..\Control\chassis_app\chassis_app.h)(0x621207E5)
-I (../Core/Inc/SYSConfig.h)(0x6212074B)
+I (..\Control\chassis_app\chassis_app.h)(0x621272B6)
+I (../Core/Inc/SYSConfig.h)(0x6224B81E)
 I (../Core/Inc/main.h)(0x620A6823)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x620A66F9)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x620A6823)
@@ -736,10 +660,10 @@ I (..\Control\TIM_1s_LED\TIM_LED.h)(0x61F52826)
 I (../Core/Inc/tim.h)(0x620A6822)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdlib.h)(0x60252374)
-I (..\Control\RemoteControl\RemoteControl.h)(0x620C78E1)
+I (..\Control\RemoteControl\RemoteControl.h)(0x621264A9)
 F (..\Control\gimbal_app\gimbal_app.c)(0x62120AB0)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\gimbal_app.o --omf_browse test1\gimbal_app.crf --depend test1\gimbal_app.d)
 I (..\Control\gimbal_app\gimbal_app.h)(0x6210030F)
-I (../Core/Inc/SYSConfig.h)(0x6212074B)
+I (../Core/Inc/SYSConfig.h)(0x6224B81E)
 I (../Core/Inc/main.h)(0x620A6823)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x620A66F9)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x620A6823)
@@ -777,14 +701,14 @@ I (..\Control\TIM_1s_LED\TIM_LED.h)(0x61F52826)
 I (../Core/Inc/tim.h)(0x620A6822)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdlib.h)(0x60252374)
-I (..\Control\RemoteControl\RemoteControl.h)(0x620C78E1)
+I (..\Control\RemoteControl\RemoteControl.h)(0x621264A9)
 F (..\Control\gimbal_behaviour\gimbal_behaviour.c)(0x6210A3E6)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\gimbal_behaviour.o --omf_browse test1\gimbal_behaviour.crf --depend test1\gimbal_behaviour.d)
 I (..\Control\gimbal_behaviour\gimbal_behaviour.h)(0x621002A5)
 F (..\Control\automatic_strike\automatic_strike.c)(0x6210A3E6)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\automatic_strike.o --omf_browse test1\automatic_strike.crf --depend test1\automatic_strike.d)
 I (..\Control\automatic_strike\automatic_strike.h)(0x621002C3)
-F (..\TASK\TASK_Chassis.c)(0x6210B7CB)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\task_chassis.o --omf_browse test1\task_chassis.crf --depend test1\task_chassis.d)
-I (..\TASK\TASK_Chassis.h)(0x6210B7E3)
-I (../Core/Inc/SYSConfig.h)(0x6212074B)
+F (..\TASK\TASK_Chassis.c)(0x62257455)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\task_chassis.o --omf_browse test1\task_chassis.crf --depend test1\task_chassis.d)
+I (..\TASK\TASK_Chassis.h)(0x6225746E)
+I (../Core/Inc/SYSConfig.h)(0x6224B81E)
 I (../Core/Inc/main.h)(0x620A6823)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x620A66F9)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x620A6823)
@@ -822,10 +746,15 @@ I (..\Control\TIM_1s_LED\TIM_LED.h)(0x61F52826)
 I (../Core/Inc/tim.h)(0x620A6822)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdlib.h)(0x60252374)
-I (..\Control\RemoteControl\RemoteControl.h)(0x620C78E1)
-F (..\ALGORITHM\maths.c)(0x62075030)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\maths.o --omf_browse test1\maths.crf --depend test1\maths.d)
-I (..\ALGORITHM\maths.h)(0x62075056)
-I (../Core/Inc/SYSConfig.h)(0x6212074B)
+I (..\Control\RemoteControl\RemoteControl.h)(0x621264A9)
+F (..\TASK\TASK_Fire.c)(0x621253AB)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\task_fire.o --omf_browse test1\task_fire.crf --depend test1\task_fire.d)
+F (..\TASK\TASK_Gimbal.c)(0x62126192)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\task_gimbal.o --omf_browse test1\task_gimbal.crf --depend test1\task_gimbal.d)
+I (..\TASK\TASK_Gimbal.h)(0x62125397)
+F (..\TASK\TASK_LED.c)(0x621253FD)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\task_led.o --omf_browse test1\task_led.crf --depend test1\task_led.d)
+F (..\TASK\TASK_Safe.c)(0x621253E5)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\task_safe.o --omf_browse test1\task_safe.crf --depend test1\task_safe.d)
+F (..\ALGORITHM\maths.c)(0x6214877A)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\maths.o --omf_browse test1\maths.crf --depend test1\maths.d)
+I (..\ALGORITHM\maths.h)(0x62135AAA)
+I (../Core/Inc/SYSConfig.h)(0x6224B81E)
 I (../Core/Inc/main.h)(0x620A6823)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x620A66F9)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x620A6823)
@@ -863,10 +792,10 @@ I (..\Control\TIM_1s_LED\TIM_LED.h)(0x61F52826)
 I (../Core/Inc/tim.h)(0x620A6822)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdlib.h)(0x60252374)
-I (..\Control\RemoteControl\RemoteControl.h)(0x620C78E1)
-F (..\ALGORITHM\pid.c)(0x620656D1)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\pid.o --omf_browse test1\pid.crf --depend test1\pid.d)
-I (..\ALGORITHM\pid.h)(0x6206546B)
-I (../Core/Inc/SYSConfig.h)(0x6212074B)
+I (..\Control\RemoteControl\RemoteControl.h)(0x621264A9)
+F (..\ALGORITHM\pid.c)(0x6224A2EA)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\pid.o --omf_browse test1\pid.crf --depend test1\pid.d)
+I (..\ALGORITHM\pid.h)(0x6224A312)
+I (../Core/Inc/SYSConfig.h)(0x6224B81E)
 I (../Core/Inc/main.h)(0x620A6823)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x620A66F9)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x620A6823)
@@ -904,10 +833,10 @@ I (..\Control\TIM_1s_LED\TIM_LED.h)(0x61F52826)
 I (../Core/Inc/tim.h)(0x620A6822)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdlib.h)(0x60252374)
-I (..\Control\RemoteControl\RemoteControl.h)(0x620C78E1)
+I (..\Control\RemoteControl\RemoteControl.h)(0x621264A9)
 F (..\ALGORITHM\rmmotor.c)(0x620C79BD)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\rmmotor.o --omf_browse test1\rmmotor.crf --depend test1\rmmotor.d)
 I (..\ALGORITHM\rmmotor.h)(0x620EF09C)
-I (../Core/Inc/SYSConfig.h)(0x6212074B)
+I (../Core/Inc/SYSConfig.h)(0x6224B81E)
 I (../Core/Inc/main.h)(0x620A6823)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x620A66F9)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x620A6823)
@@ -945,7 +874,7 @@ I (..\Control\TIM_1s_LED\TIM_LED.h)(0x61F52826)
 I (../Core/Inc/tim.h)(0x620A6822)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (E:\ApplicationDocs\keilCore\ARM\ARMCC\include\stdlib.h)(0x60252374)
-I (..\Control\RemoteControl\RemoteControl.h)(0x620C78E1)
+I (..\Control\RemoteControl\RemoteControl.h)(0x621264A9)
 F (..\ALGORITHM\filter.c)(0x6210A3E6)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\filter.o --omf_browse test1\filter.crf --depend test1\filter.d)
 I (..\ALGORITHM\filter.h)(0x6210033B)
 F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c)(0x620A66F9)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O1 -Otime --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Core\Src -I ..\Control\can1_ControlMotor -I ..\Control\PID -I ..\Control\TIM_1s_LED -I ..\TASK -I ..\Control\RemoteControl -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ..\Control\chassis_behaviour -I ..\Control\automatic_strike -I ..\Control\chassis_app -I ..\Control\gimbal_app -I ..\Control\gimbal_behaviour-I.\RTE\_Infantry_2022-IE:\ApplicationDocs\ArmPacks\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IE:\ApplicationDocs\ArmPacks\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o test1\stm32f4xx_hal_can.o --omf_browse test1\stm32f4xx_hal_can.crf --depend test1\stm32f4xx_hal_can.d)

@@ -11,7 +11,7 @@
 
 #ifndef __TASK_CHASSIS_H
 #define __TASK_CHASSIS_H
-
+#include "SYSConfig.h"
 
 //os启动时间和控制任务周期
 #define CHASSIS_TASK_INIT_TIME 5
@@ -29,12 +29,16 @@
 #define CHASSIS_LOCATION_PID_ki 2.0f
 #define CHASSIS_LOCATION_PID_kd 0.0f
 
+//底盘电机输出限制,vscode 里PID Init用不了，疯狂报错
+#define CHASSIS_SPEED_H_LIMITED 5000.0f
+#define CHASSIS_SPEED_L_LIMITED -5000.0f
+
 
 //底盘模式
-typedef enum
-{
+// typedef enum
+// {
     
-}Chassis_Mode;
+// }Chassis_Mode;
 
 
 typedef struct
@@ -54,13 +58,21 @@ typedef struct
 typedef struct
 {
     const RC_Ctl_t *RC_Chassis_Data;    //底盘遥控器数据指针
+    CAN_Motor_Measure_Data *Yaw_Motor_Measurement;  //can2接收到的Yaw数据指针
 
     Chassis_MotorStructure motor[4];    //底盘电机数据
-
     PIDTypeDef Chassis_Speed_PID[4];    //底盘速度PID
     PIDTypeDef Chassis_location_PID[4]; //底盘位置环PID
 
-    Chassis_mode_e Chassis_Mode;
+    Chassis_mode_e Chassis_Mode;        //遥控器设置底盘状态的状态标志位
+
+    fp32 Speed_x_set;//底盘设定速度 前进方向 前为正，单位 m/s
+    fp32 Speed_y_set;//底盘设定速度 左右方向 左为正，单位 m/s
+
+    fp32 Angel_Between_Chassis_Gimbal;//底盘与云台之间的角度?还是两个的角度
+
+    uint8_t sign;       //前后走标志
+    uint8_t sign_last;  //延续前后走标志
 
 }Chassis_Control_t;
 
@@ -74,7 +86,7 @@ void Chassis_Motor_Data_Update(Chassis_Control_t *Chassis_MDU_t);   //MDU=Motor_
 void Chassis_RC_MODE_Set(Chassis_Control_t *Chassis_RC_Mode_t);     //遥控器模式设置    
 void Chassis_Pid_Cal(Chassis_Control_t *Chassis_PID_t);             //PID计算
 void Chassis_SentTo_Gimbal(Chassis_Control_t *Chassis_Gimbal_t);    //底盘发送数据至云台
-
+void Chassis_Task_OFF(uint8_t options);                             //底盘全部关闭
 #define CHASSIS_AUTO_SPPED 0 //还没测试之前暂时不设置
 
 #endif

@@ -25,6 +25,24 @@ fp32 PID_STOP_Init(void)
     PID_STOP.SetValues = 0;
 }
 
+/************************** Dongguan-University of Technology -ACE**************************
+ * @brief PID初始化
+ * 
+ * @param PID_Init_t 
+ * @param kp 
+ * @param ki 
+ * @param kd 
+ * @param H_Limited 输出上限
+ * @param L_Limited 输出下限
+ ************************** Dongguan-University of Technology -ACE***************************/
+void PID_Init(PIDTypeDef *PID_Init_t,fp32 kp,fp32 ki,fp32 kd,float H_Limited,fp32 L_Limited)
+{
+    PID_Init_t->kp=kp;
+    PID_Init_t->ki=ki;
+    PID_Init_t->kd=kd;
+    PID_Init_t->H_Limited=H_Limited;
+    PID_Init_t->L_Limited=L_Limited;
+}
 
 
 fp32 PIDcal(PIDTypeDef *pid)

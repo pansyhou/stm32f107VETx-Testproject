@@ -69,12 +69,20 @@
 #include "maths.h"
 #endif
 
+// 方向
+#define	GOFORWARD	 1				//自动模式下的向前
+#define	GOBACK		 0				//自动模式下的向后
+
+
 /* 底盘电机移动速度设定 */
 #define M3508_MAX_OUTPUT_CURRENT 5000 // m3508电机最大电流输出
 #define M2006_MAX_OUTPUT_CURRENT 9500 // m2006电机最大电流输出
 
 #define MAX_MOTOR_CAN_INPUT 2000.0f   // 3508最大电流输入
 #define MAX_MOTOR_CAN_OUTPUT 16000.0f // 3508最大电流输出
+
+
+
 
 
 /************电机 传动比*减速比 ***************/

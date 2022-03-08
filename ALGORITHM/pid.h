@@ -32,6 +32,6 @@ fp32 limit(fp32 object,fp32 H_Limitation,fp32 L_Limitation);
 fp32 PIDcal(PIDTypeDef *pid);
 fp32 PID_Position_speed_Control(PIDTypeDef *SpeedPid,PIDTypeDef *PoisionPid,fp32 current_speed,fp32 current_poision,fp32 set_poision);
 fp32 PID_STOP_Init(void);
-
+void PID_Init(PIDTypeDef *PID_Init_t,fp32 kp,fp32 ki,fp32 kd,fp32 H_Limited,fp32 L_Limited);
 #endif
 

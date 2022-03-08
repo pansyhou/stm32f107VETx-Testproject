@@ -11,7 +11,7 @@
  *
  ************************** Dongguan-University of Technology -ACE************************** */
 #include "RemoteControl.h"
-
+#include "SYSConfig.h"
 
 #define Sbus_RX_Buffer_Num 36
 #define RC_FRAME_LENGTH 18
@@ -20,6 +20,20 @@
 static RC_Ctl_t rc_ctl;
 //接收数据缓存，有两个缓冲区，每一缓冲区有18个字节（8*18=144），为防止DMA传输越界给36
 uint8_t Sbus_RX_Buffer[2][Sbus_RX_Buffer_Num];
+
+
+
+
+/************************** Dongguan-University of Technology -ACE**************************
+ * @brief 获取遥控器数据指针
+ * 
+ * @return const RC_Ctl_t* 
+ ************************** Dongguan-University of Technology -ACE***************************/
+const RC_Ctl_t *RC_Get_RC_Pointer(void)
+{
+    return &rc_ctl;
+}
+
 
 /************************** Dongguan-University of Technology -ACE**************************
  * @brief简介 遥控器初始化函数
@@ -58,6 +72,19 @@ void RC_Init(uint8_t *Rx1_Buff,uint8_t *Rx2_Buff,uint16_t Data_Buff_Lenth)
     __HAL_DMA_ENABLE(&hdma_usart1_rx);
 }
 
+
+
+
+
+
+
+/************************** Dongguan-University of Technology -ACE**************************
+ * @brief 遥控器数据处理
+ * 
+ * @param pData 原始数据数组
+ * @param RC_CTRL 遥控器统一结构体
+ * @return int 
+ ************************** Dongguan-University of Technology -ACE***************************/
 int RC_DataProcess(volatile const uint8_t *pData,RC_Ctl_t *RC_CTRL)
 {
     RC_CTRL->rc.ch0 = ((int16_t)pData[0] | ((int16_t)pData[1] << 8)) & 0x07FF;
@@ -81,6 +108,14 @@ int RC_DataProcess(volatile const uint8_t *pData,RC_Ctl_t *RC_CTRL)
  return 0;
 }
 
+
+
+
+/************************** Dongguan-University of Technology -ACE**************************
+ * @brief 俺自定义的一个串口中断，已经加在stm32f4xx_it.c的用户自定义串口中断里了
+ * 
+ * @param huart 
+ ************************** Dongguan-University of Technology -ACE***************************/
 void RC_UART_IRQHandler(UART_HandleTypeDef *huart)
 {
     if(huart1.Instance->SR & UART_FLAG_RXNE )
@@ -140,13 +175,21 @@ void RC_UART_IRQHandler(UART_HandleTypeDef *huart)
     
 }
 
+
+
+/************************** Dongguan-University of Technology -ACE**************************
+ * @brief 遥控器绝对值处理
+ * 
+ * @param num 
+ * @return int16_t 
+ ************************** Dongguan-University of Technology -ACE***************************/
 static int16_t RC_abs(int16_t num)
 {
     if (num<0)return -num;
     else return num;
 }
 
-//还有重启遥控器和reload没写
+
 /************************** Dongguan-University of Technology -ACE**************************
  * @brief 判断遥控器是否出错，采用go to 语句统一将错误数据归零(感觉goto挺好的)
  * 
@@ -206,6 +249,8 @@ void RC_Restart(uint16_t dma_buf_num)
     __HAL_DMA_ENABLE(&hdma_usart1_rx);
 
 }
+
+
 
 
 /************************** Dongguan-University of Technology -ACE**************************

@@ -806,16 +806,6 @@
           <GroupName>Control</GroupName>
           <Files>
             <File>
-              <FileName>can1_ControlMotor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Control\can1_ControlMotor\can1_ControlMotor.c</FilePath>
-            </File>
-            <File>
-              <FileName>PID_Test_forC620.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Control\PID\PID_Test_forC620.c</FilePath>
-            </File>
-            <File>
               <FileName>TIM_LED.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Control\TIM_1s_LED\TIM_LED.c</FilePath>
@@ -869,6 +859,26 @@
               <FileName>TASK_Chassis.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\TASK\TASK_Chassis.c</FilePath>
+            </File>
+            <File>
+              <FileName>TASK_Fire.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TASK\TASK_Fire.c</FilePath>
+            </File>
+            <File>
+              <FileName>TASK_Gimbal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TASK\TASK_Gimbal.c</FilePath>
+            </File>
+            <File>
+              <FileName>TASK_LED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TASK\TASK_LED.c</FilePath>
+            </File>
+            <File>
+              <FileName>TASK_Safe.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TASK\TASK_Safe.c</FilePath>
             </File>
           </Files>
         </Group>

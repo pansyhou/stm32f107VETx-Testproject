@@ -56,6 +56,6 @@ typedef struct
 void CAN1_Filter_Config(void);                                      //CAN1滤波器配置（不带CAN中断启动、CAN开启传输
 void CAN1_Chassis_Receive(CAN_HandleTypeDef *hcan);                 //CAN1接收（大概是想收底盘四个电机
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);    //重定义CAN回调函数
-
+const void CAN1_Get_ChassisMotor_Pointer(void);                     //底盘电机获取
 #endif
 
