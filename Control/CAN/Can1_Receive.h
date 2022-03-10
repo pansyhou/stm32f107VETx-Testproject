@@ -4,6 +4,8 @@
 #include "SYSConfig.h"
 
 
+#define gimbal_yaw_to_chassis 2//旧版本can2 数据由can2传输给底盘板5684，底盘板再输出给yaw轴电机    1 -> can1发送   2 -> can2发送
+
 //CAN接收ID
 typedef enum
 {

@@ -12,6 +12,10 @@
 #ifndef  __REMOTECONTROL_H
 #define  __REMOTECONTROL_H
 
+#define RC_CH_VALUE_MIN         ((uint16_t)364)
+#define RC_CH_VALUE_OFFSET      ((uint16_t)1024)
+#define RC_CH_VALUE_MAX         ((uint16_t)1684)
+
 /*
  * 遥控器接收数据结构体*/
  //__packed为字节对齐

@@ -109,6 +109,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	printf("\r\n**** Serial Output Message by DMA ***\r\n   UART DMA Test \r\n  �� ��������");
   PWM_LED();
+  
   //Can1_ControlMotor_Exp_Mian();
 
 

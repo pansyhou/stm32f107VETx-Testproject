@@ -71,6 +71,9 @@ typedef struct
 
     fp32 Angel_Between_Chassis_Gimbal;//底盘与云台之间的角度?还是两个的角度
 
+    first_order_filter_type_t LowFilt_chassis_vx;//低通滤波器结构体，vx
+    first_order_filter_type_t LowFilt_chassis_vy;
+
     uint8_t sign;       //前后走标志
     uint8_t sign_last;  //延续前后走标志
 
@@ -88,5 +91,14 @@ void Chassis_Pid_Cal(Chassis_Control_t *Chassis_PID_t);             //PID计算
 void Chassis_SentTo_Gimbal(Chassis_Control_t *Chassis_Gimbal_t);    //底盘发送数据至云台
 void Chassis_Task_OFF(uint8_t options);                             //底盘全部关闭
 #define CHASSIS_AUTO_SPPED 0 //还没测试之前暂时不设置
+
+
+
+/**********************运动加速度限制**********************/
+#define STRAIGHT_ACCELERAD        3.5f      //直行底盘加速度限制
+#define TRANSLATION_ACCELERAD     5.5f      //平移底盘加速度限制
+#define CHASSIS_AUTO_SPPED				4000			 //21赛季为7000			
+#define CHASSIS_BLOCKING_SPPED		    6700 //走位速度 ，挨打后的速度 7000  
+
 
 #endif

@@ -122,3 +122,37 @@ void Chassis_app_YAW_SendMsg(const CAN_Motor_Measure_Data *Can_YAW_Send)
 
     HAL_CAN_AddTxMessage(&hcan2,&Txmessage,Data,&Tx_MailBox);
 }
+
+
+
+
+
+/************************** Dongguan-University of Technology -ACE**************************
+ * @brief 底盘CAN1遥控器数据发送（到底发送什么过去，我都不知道
+ * 
+ * @param CAN1_RC_Send_t 
+ ************************** Dongguan-University of Technology -ACE***************************/
+void Chassis_app_RC_CAN1_SendMsg(const RC_Ctl_t *CAN1_RC_Send_t)
+{
+    uint32_t Tx_MailBox;    //发送邮箱
+    uint8_t Data[8];        //发送数据数组
+
+    CAN_TxHeaderTypeDef Txmessage;
+    Txmessage.StdId = RC_CAN1_TO_SEND_ID;  
+    Txmessage.IDE = CAN_ID_STD;
+    Txmessage.RTR = CAN_RTR_DATA;
+    Txmessage.DLC = 8;
+
+    //有空记得改遥控器发送的数据，我都不知道发什么过去
+    Data[0]=(unsigned char)(CAN1_RC_Send_t->rc.ch1>>8);
+    Data[1]=(unsigned char)(CAN1_RC_Send_t->rc.ch1);
+    Data[2]=(unsigned char)(CAN1_RC_Send_t->rc.ch2>>8);
+    Data[3]=(unsigned char)(CAN1_RC_Send_t->rc.ch2);
+    Data[4]=(unsigned char)(CAN1_RC_Send_t->rc.ch3>>8);
+    Data[5]=(unsigned char)(CAN1_RC_Send_t->rc.ch3);
+    Data[6]=(unsigned char)(CAN1_RC_Send_t->rc.s1);
+    Data[7]=(unsigned char)(CAN1_RC_Send_t->rc.s2);
+
+
+    HAL_CAN_AddTxMessage(&hcan2,&Txmessage,Data,&Tx_MailBox);
+}

@@ -93,7 +93,7 @@
 #define PITCH_GR (1.5)         // pitch传动比
 
 #define YAW_CAN_TO_SEND_ID 0x5ff //底盘发送YAW数据至云台板的的CAN STD ID
-
+#define RC_CAN1_TO_SEND_ID 0x400 //底盘发送遥控器数据到云台板的CAN STD ID
 extern UART_HandleTypeDef huart1;
 extern DMA_HandleTypeDef hdma_usart1_rx;
 extern CAN_HandleTypeDef hcan1;

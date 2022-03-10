@@ -35,4 +35,27 @@ typedef __packed struct
 }first_order_filter_type_t;
 
 
+
+/***********函数声明*************/
+
+int16_t int16_t_abs(int16_t x); // 绝对值计算
+
+int32_t int32_limit(int32_t x, int32_t max, int32_t min);//数值限制
+
+int16_t int16_limit(int16_t x, int16_t max, int16_t min);
+float float_limit(float x, float max, float min);
+signed long limit_long(signed long x, signed long max, signed long min);
+signed long long_abs(signed long x);// 绝对值计算
+
+float float_abs(float x); // 绝对值计算
+float invSqrt(float x) ;//平方根倒数速算法
+int16_t Motion_Acceleration_Control(Acceleration_Control_type_t *acceleration_control, int16_t Input, int16_t Limit);
+float first_order_filter(first_order_filter_type_t *first_order_filter_type, fp32 input);
+void first_order_filter_init(first_order_filter_type_t *first_order_filter_type, fp32 num);
+void Sliding_Mean_Filter_Init(sliding_mean_filter_type_t *mean_filter);
+float Sliding_Mean_Filter(sliding_mean_filter_type_t *mean_filter, float Input, int num);
+int16_t Loop_Restriction_Int16(int16_t num, int16_t limit_num);
+float Loop_Restriction_Float(float num, float limit_num);
+float loop_fp32_constrain(float Input, float minValue, float maxValue);
+void Data_Acceleration_Control(float angle);
 #endif
