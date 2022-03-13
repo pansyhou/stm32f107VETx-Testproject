@@ -15,7 +15,8 @@
         "rmmotor.h": "c",
         "maths.h": "c",
         "task.h": "c",
-        "chassis_app.h": "c"
+        "chassis_app.h": "c",
+        "task_safe.h": "c"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }
