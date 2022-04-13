@@ -135,6 +135,8 @@
                 "E:\\ApplicationDocs\\keilCore\\ARM\\ARMCC\\include\\rw",
                 "c:\\Users\\16771\\Desktop\\Infantry_2022\\MDK-ARM",
                 "c:\\Users\\16771\\Desktop\\Infantry_2022\\Control\\CAN",
+                "c:\\Users\\16771\\Desktop\\Infantry_2022\\Control\\upper_machine",
+                "c:\\Users\\16771\\Desktop\\Infantry_2022\\Control\\imu",
                 "c:\\Users\\16771\\Desktop\\Infantry_2022\\ALGORITHM",
                 "c:\\Users\\16771\\Desktop\\Infantry_2022\\Drivers\\STM32F4xx_HAL_Driver\\Src",
                 "c:\\Users\\16771\\Desktop\\Infantry_2022\\Middlewares\\Third_Party\\FreeRTOS\\Source",

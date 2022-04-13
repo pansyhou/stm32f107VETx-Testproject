@@ -22,95 +22,233 @@ Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
 c:\Users\16771\Desktop\Infantry_2022\MDK-ARM\Infantry_2022.uvprojx
-Project File Date:  03/07/2022
+Project File Date:  03/30/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'E:\ApplicationDocs\keilCore\ARM\ARMCC\Bin'
 Build target 'Infantry_2022'
+assembling startup_stm32f407xx.s...
 compiling RemoteControl.c...
-..\Control\RemoteControl\RemoteControl.h(26): error:  #20: identifier "uint16_t" is undefined
-          uint16_t ch0;
-..\Control\RemoteControl\RemoteControl.h(27): error:  #20: identifier "uint16_t" is undefined
-          uint16_t ch1;
-..\Control\RemoteControl\RemoteControl.h(28): error:  #20: identifier "uint16_t" is undefined
-          uint16_t ch2;
-..\Control\RemoteControl\RemoteControl.h(29): error:  #20: identifier "uint16_t" is undefined
-          uint16_t ch3;
-..\Control\RemoteControl\RemoteControl.h(30): error:  #20: identifier "uint8_t" is undefined
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+..\Control\RemoteControl\RemoteControl.h(57): error:  #20: identifier "int16_t" is undefined
+          int16_t ch[5];
+..\Control\RemoteControl\RemoteControl.h(58): error:  #20: identifier "uint8_t" is undefined
           uint8_t s1;
-..\Control\RemoteControl\RemoteControl.h(31): error:  #20: identifier "uint8_t" is undefined
+..\Control\RemoteControl\RemoteControl.h(59): error:  #20: identifier "uint8_t" is undefined
           uint8_t s2;
-..\Control\RemoteControl\RemoteControl.h(35): error:  #20: identifier "int16_t" is undefined
+..\Control\RemoteControl\RemoteControl.h(63): error:  #20: identifier "int16_t" is undefined
           int16_t x;
-..\Control\RemoteControl\RemoteControl.h(36): error:  #20: identifier "int16_t" is undefined
+..\Control\RemoteControl\RemoteControl.h(64): error:  #20: identifier "int16_t" is undefined
           int16_t y;
-..\Control\RemoteControl\RemoteControl.h(37): error:  #20: identifier "int16_t" is undefined
+..\Control\RemoteControl\RemoteControl.h(65): error:  #20: identifier "int16_t" is undefined
           int16_t z;
-..\Control\RemoteControl\RemoteControl.h(38): error:  #20: identifier "uint8_t" is undefined
+..\Control\RemoteControl\RemoteControl.h(66): error:  #20: identifier "uint8_t" is undefined
           uint8_t press_l;
-..\Control\RemoteControl\RemoteControl.h(39): error:  #20: identifier "uint8_t" is undefined
+..\Control\RemoteControl\RemoteControl.h(67): error:  #20: identifier "uint8_t" is undefined
           uint8_t press_r;
-..\Control\RemoteControl\RemoteControl.h(43): error:  #20: identifier "uint16_t" is undefined
+..\Control\RemoteControl\RemoteControl.h(72): error:  #20: identifier "uint16_t" is undefined
+          uint16_t key_code;
+..\Control\RemoteControl\RemoteControl.h(75): error:  #20: identifier "uint16_t" is undefined
+              uint16_t W : 1;
+..\Control\RemoteControl\RemoteControl.h(76): error:  #20: identifier "uint16_t" is undefined
+              uint16_t S : 1;
+..\Control\RemoteControl\RemoteControl.h(77): error:  #20: identifier "uint16_t" is undefined
+              uint16_t A : 1;
+..\Control\RemoteControl\RemoteControl.h(78): error:  #20: identifier "uint16_t" is undefined
+              uint16_t D : 1;
+..\Control\RemoteControl\RemoteControl.h(79): error:  #20: identifier "uint16_t" is undefined
+              uint16_t SHIFT : 1;
+..\Control\RemoteControl\RemoteControl.h(80): error:  #20: identifier "uint16_t" is undefined
+              uint16_t CTRL : 1;
+..\Control\RemoteControl\RemoteControl.h(81): error:  #20: identifier "uint16_t" is undefined
+              uint16_t Q : 1;
+..\Control\RemoteControl\RemoteControl.h(82): error:  #20: identifier "uint16_t" is undefined
+              uint16_t E : 1;
+..\Control\RemoteControl\RemoteControl.h(83): error:  #20: identifier "uint16_t" is undefined
+              uint16_t R : 1;
+..\Control\RemoteControl\RemoteControl.h(84): error:  #20: identifier "uint16_t" is undefined
+              uint16_t F : 1;
+..\Control\RemoteControl\RemoteControl.h(85): error:  #20: identifier "uint16_t" is undefined
+              uint16_t G : 1;
+..\Control\RemoteControl\RemoteControl.h(86): error:  #20: identifier "uint16_t" is undefined
+              uint16_t Z : 1;
+..\Control\RemoteControl\RemoteControl.h(87): error:  #20: identifier "uint16_t" is undefined
+              uint16_t X : 1;
+..\Control\RemoteControl\RemoteControl.h(88): error:  #20: identifier "uint16_t" is undefined
+              uint16_t C : 1;
+..\Control\RemoteControl\RemoteControl.h(89): error:  #20: identifier "uint16_t" is undefined
+              uint16_t V : 1;
+..\Control\RemoteControl\RemoteControl.h(90): error:  #20: identifier "uint16_t" is undefined
+              uint16_t B : 1;
+..\Control\RemoteControl\RemoteControl.h(95): error:  #20: identifier "uint16_t" is undefined
           uint16_t v;
-..\Control\RemoteControl\RemoteControl.h(49): error:  #20: identifier "UART_HandleTypeDef" is undefined
+..\Control\RemoteControl\RemoteControl.h(101): error:  #20: identifier "UART_HandleTypeDef" is undefined
   void    RC_UART_IRQHandler(UART_HandleTypeDef *huart);
-..\Control\RemoteControl\RemoteControl.h(50): error:  #20: identifier "uint8_t" is undefined
+..\Control\RemoteControl\RemoteControl.h(102): error:  #20: identifier "uint8_t" is undefined
   int     RC_DataProcess(volatile const uint8_t *pData,RC_Ctl_t *RC_CTRL);
-..\Control\RemoteControl\RemoteControl.h(51): error:  #20: identifier "uint8_t" is undefined
+..\Control\RemoteControl\RemoteControl.h(103): error:  #20: identifier "uint8_t" is undefined
   void    RC_Init(uint8_t *Rx1_Buff,uint8_t *Rx2_Buff,uint16_t Data_Buff_Lenth);
-..\Control\RemoteControl\RemoteControl.h(51): error:  #20: identifier "uint8_t" is undefined
+..\Control\RemoteControl\RemoteControl.h(103): error:  #20: identifier "uint8_t" is undefined
   void    RC_Init(uint8_t *Rx1_Buff,uint8_t *Rx2_Buff,uint16_t Data_Buff_Lenth);
-..\Control\RemoteControl\RemoteControl.h(51): error:  #20: identifier "uint16_t" is undefined
-  void    RC_Init(uint8_t *Rx1_Buff,uint8_t *Rx2_Buff,uint16_t Data_Buff_Lenth);
-..\Control\RemoteControl\RemoteControl.h(53): error:  #20: identifier "int16_t" is undefined
-  static  int16_t RC_abs(int16_t num);
-..\Control\RemoteControl\RemoteControl.h(53): error:  #20: identifier "int16_t" is undefined
-  static  int16_t RC_abs(int16_t num);
-..\Control\RemoteControl\RemoteControl.h(54): error:  #20: identifier "uint8_t" is undefined
-  uint8_t RC_Check_Data_IS_ERROR(void);
-..\Control\RemoteControl\RemoteControl.h(55): error:  #20: identifier "uint16_t" is undefined
-  void    RC_Restart(uint16_t dma_buf_num);
-../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
-  #include "Can1_Receive.h"
-..\Control\RemoteControl\RemoteControl.c: 0 warnings, 22 errors
-compiling pid.c...
-../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
-  #include "Can1_Receive.h"
-..\ALGORITHM\pid.c: 0 warnings, 1 error
-compiling Can2_Receive.c...
-../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
-  #include "Can1_Receive.h"
-..\Control\CAN\Can2_Receive.c: 0 warnings, 1 error
-compiling chassis_app.c...
-../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
-  #include "Can1_Receive.h"
-..\Control\chassis_app\chassis_app.c: 0 warnings, 1 error
+..\Control\RemoteControl\RemoteControl.c: 1 warning, 30 errors
+compiling usart.c...
+compiling tim.c...
 compiling chassis_behaviour.c...
-../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+../Core/Inc/SYSConfig.h(46): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
   #include "Can1_Receive.h"
-..\Control\chassis_behaviour\chassis_behaviour.c: 0 warnings, 1 error
-compiling gimbal_app.c...
-../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
-  #include "Can1_Receive.h"
-..\Control\gimbal_app\gimbal_app.c: 0 warnings, 1 error
+..\Control\chassis_behaviour\chassis_behaviour.c: 1 warning, 1 error
 compiling Can1_Receive.c...
-../Core/Inc/SYSConfig.h(34): error:  #5: cannot open source input file "Can2_Receive.h": No such file or directory
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+../Core/Inc/SYSConfig.h(50): error:  #5: cannot open source input file "Can2_Receive.h": No such file or directory
   #include "Can2_Receive.h"
-..\Control\CAN\Can1_Receive.c: 0 warnings, 1 error
-compiling rmmotor.c...
-../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+..\Control\CAN\Can1_Receive.c: 1 warning, 1 error
+compiling Can2_Receive.c...
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+../Core/Inc/SYSConfig.h(46): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
   #include "Can1_Receive.h"
-..\ALGORITHM\rmmotor.c: 0 warnings, 1 error
-compiling TASK_Chassis.c...
-../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+..\Control\CAN\Can2_Receive.c: 1 warning, 1 error
+compiling SYSConfig.c...
+..\Core\Src\SYSConfig.c(1): warning:  #1-D: last line of file ends without a newline
+  #include "SYSConfig.h"
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+../Core/Inc/SYSConfig.h(46): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
   #include "Can1_Receive.h"
-..\TASK\TASK_Chassis.c: 0 warnings, 1 error
-compiling maths.c...
-../Core/Inc/SYSConfig.h(30): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
-  #include "Can1_Receive.h"
-..\ALGORITHM\maths.c: 0 warnings, 1 error
+..\Core\Src\SYSConfig.c: 2 warnings, 1 error
+compiling spi.c...
+compiling dma.c...
+compiling gpio.c...
+compiling TIM_LED.c...
+compiling stm32f4xx_hal_msp.c...
+compiling can.c...
+compiling stm32f4xx_it.c...
 compiling main.c...
-"test1\Infantry_2022.axf" - 31 Error(s), 0 Warning(s).
+compiling freertos.c...
+compiling gimbal_behaviour.c...
+..\Control\gimbal_behaviour\gimbal_behaviour.c(1): warning:  #1-D: last line of file ends without a newline
+  #include "gimbal_behaviour.h"
+..\Control\gimbal_behaviour\gimbal_behaviour.h(7): error:  #20: identifier "gimbal_control_t" is undefined
+  void Gimbal_behaviour_mode_set(gimbal_control_t *fir_gimbal_behaviour_f);
+..\Control\gimbal_behaviour\gimbal_behaviour.h(8): error:  #20: identifier "gimbal_control_t" is undefined
+  void Gimbal_Stop(gimbal_control_t *gimbal_stop_f);
+..\Control\gimbal_behaviour\gimbal_behaviour.c: 1 warning, 2 errors
+compiling fifo.c...
+..\ALGORITHM\fifo.h(39): error:  #5: cannot open source input file "struct_typedef.h": No such file or directory
+  #include "struct_typedef.h"
+..\ALGORITHM\fifo.c: 0 warnings, 1 error
+compiling TASK_Chassis.c...
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+../Core/Inc/SYSConfig.h(46): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+  #include "Can1_Receive.h"
+..\TASK\TASK_Chassis.c: 1 warning, 1 error
+compiling pid.c...
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+../Core/Inc/SYSConfig.h(46): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+  #include "Can1_Receive.h"
+..\ALGORITHM\pid.c: 1 warning, 1 error
+compiling chassis_app.c...
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+../Core/Inc/SYSConfig.h(46): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+  #include "Can1_Receive.h"
+..\Control\chassis_app\chassis_app.c: 1 warning, 1 error
+compiling TASK_Gimbal.c...
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+../Core/Inc/SYSConfig.h(46): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+  #include "Can1_Receive.h"
+..\TASK\TASK_Gimbal.c: 1 warning, 1 error
+compiling TASK_Safe.c...
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+../Core/Inc/SYSConfig.h(46): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+  #include "Can1_Receive.h"
+..\TASK\TASK_Safe.c: 1 warning, 1 error
+compiling TASK_Fire.c...
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+../Core/Inc/SYSConfig.h(46): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+  #include "Can1_Receive.h"
+..\TASK\TASK_Fire.c: 1 warning, 1 error
+compiling gimbal_app.c...
+..\Control\gimbal_app\gimbal_app.h(4): error:  #20: identifier "int16_t" is undefined
+  void Gimbal_app_CAN1_Fire(int16_t ESC_205,int16_t ESC_206, int16_t ESC_207, int16_t ESC_208 );
+..\Control\gimbal_app\gimbal_app.h(4): error:  #20: identifier "int16_t" is undefined
+  void Gimbal_app_CAN1_Fire(int16_t ESC_205,int16_t ESC_206, int16_t ESC_207, int16_t ESC_208 );
+..\Control\gimbal_app\gimbal_app.h(4): error:  #20: identifier "int16_t" is undefined
+  void Gimbal_app_CAN1_Fire(int16_t ESC_205,int16_t ESC_206, int16_t ESC_207, int16_t ESC_208 );
+..\Control\gimbal_app\gimbal_app.h(4): error:  #20: identifier "int16_t" is undefined
+  void Gimbal_app_CAN1_Fire(int16_t ESC_205,int16_t ESC_206, int16_t ESC_207, int16_t ESC_208 );
+..\Control\gimbal_app\gimbal_app.h(5): error:  #20: identifier "int16_t" is undefined
+  void Gimbal_app_CAN2_YAW_SendMsg(int16_t ESC_208);
+..\Control\gimbal_app\gimbal_app.h(6): error:  #20: identifier "int16_t" is undefined
+  void CAN2_Gimbal_YAW_SendMsg(int16_t ESC_208);
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+../Core/Inc/SYSConfig.h(46): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+  #include "Can1_Receive.h"
+..\Control\gimbal_app\gimbal_app.c: 1 warning, 7 errors
+compiling maths.c...
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+../Core/Inc/SYSConfig.h(46): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+  #include "Can1_Receive.h"
+..\ALGORITHM\maths.c: 1 warning, 1 error
+compiling rmmotor.c...
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+../Core/Inc/SYSConfig.h(46): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+  #include "Can1_Receive.h"
+..\ALGORITHM\rmmotor.c: 1 warning, 1 error
+compiling imu.c...
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+../Core/Inc/SYSConfig.h(46): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+  #include "Can1_Receive.h"
+..\Control\imu\imu.c: 1 warning, 1 error
+compiling automatic_strike.c...
+..\Control\RemoteControl\RemoteControl.h(21): warning:  #47-D: incompatible redefinition of macro "RC_CH_VALUE_MIN"  (declared at line 15)
+  #define RC_CH_VALUE_MIN            ((uint16_t)364 )			//通道最小�?
+../Core/Inc/SYSConfig.h(46): error:  #5: cannot open source input file "Can1_Receive.h": No such file or directory
+  #include "Can1_Receive.h"
+..\Control\automatic_strike\automatic_strike.c: 1 warning, 1 error
+compiling stm32f4xx_hal_can.c...
+compiling stm32f4xx_hal_rcc_ex.c...
+compiling stm32f4xx_hal_flash.c...
+compiling stm32f4xx_hal_rcc.c...
+compiling stm32f4xx_hal_flash_ramfunc.c...
+compiling stm32f4xx_hal_pwr.c...
+compiling croutine.c...
+compiling stm32f4xx_hal_flash_ex.c...
+compiling stm32f4xx_hal_dma.c...
+compiling stm32f4xx_hal_dma_ex.c...
+compiling stm32f4xx_hal_gpio.c...
+compiling stm32f4xx_hal_cortex.c...
+compiling stm32f4xx_hal.c...
+compiling event_groups.c...
+compiling stm32f4xx_hal_exti.c...
+compiling system_stm32f4xx.c...
+compiling stm32f4xx_hal_pwr_ex.c...
+compiling stm32f4xx_hal_tim_ex.c...
+compiling stm32f4xx_hal_spi.c...
+compiling list.c...
+compiling stm32f4xx_hal_uart.c...
+compiling stm32f4xx_hal_tim.c...
+compiling timers.c...
+compiling queue.c...
+compiling heap_4.c...
+compiling stream_buffer.c...
+compiling tasks.c...
+compiling port.c...
+compiling cmsis_os.c...
+"test1\Infantry_2022.axf" - 54 Error(s), 18 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -134,7 +272,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.5.0
 Target not created.
-Build Time Elapsed:  00:00:04
+Build Time Elapsed:  00:00:22
 </pre>
 </body>
 </html>

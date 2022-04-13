@@ -1,8 +1,13 @@
 #include "Can2_Receive.h"
 
 
-//声明Roll轴和Yaw轴电机变量
-static CAN_Motor_Measure_Data Motor_Roll,Motor_Yaw;
+//声明Pitch轴和Yaw轴电机变量
+static CAN_Motor_Measure_Data Motor_Pitch,Motor_Yaw;
+
+const CAN_Motor_Measure_Data *Get_YAW_Gimbal_Measure_Point(void)
+{
+    return &Motor_Yaw;
+}
 
 /************************** Dongguan-University of Technology -ACE**************************
  * @brief CAN2滤波器配置（不带CAN中断启动、CAN开启传输
@@ -36,7 +41,13 @@ void CAN2_Chassis_Receive(CAN_HandleTypeDef *hcan)
     {
         switch (pRxMailbox.StdId)
         {
-            case 
+            case CAN_YAW_MOTOR_ID:
+            {
+                Motor_Yaw.position=(uint16_t)(Rx_Data[0]<<8+Rx_Data[1]);
+                RM_Motor_Actual_Poisition(&Motor_Yaw,YAW_RATIO,8192);//计算yaw电机真实位置
+                Motor_Yaw.angle=Motor_Yaw.actual_Position*360/8192/YAW_RATIO;
+                Motor_Yaw.speed=(uint16_t)(Rx_Data[2]<<8+Rx_Data[3]);
+            }break;
         }
     }
 }

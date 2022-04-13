@@ -12,8 +12,8 @@ PIDTypeDef PID_STOP;
 
 /**
  * @brief 刹车结构体初始化
- * 
- * @return fp32 
+ *
+ * @return fp32
  */
 fp32 PID_STOP_Init(void)
 {
@@ -27,23 +27,22 @@ fp32 PID_STOP_Init(void)
 
 /************************** Dongguan-University of Technology -ACE**************************
  * @brief PID初始化
- * 
- * @param PID_Init_t 
- * @param kp 
- * @param ki 
- * @param kd 
+ *
+ * @param PID_Init_t
+ * @param kp
+ * @param ki
+ * @param kd
  * @param H_Limited 输出上限
  * @param L_Limited 输出下限
  ************************** Dongguan-University of Technology -ACE***************************/
-void PID_Init(PIDTypeDef *PID_Init_t,fp32 kp,fp32 ki,fp32 kd,float H_Limited,fp32 L_Limited)
+void PID_Init(PIDTypeDef *PID_Init_t, fp32 kp, fp32 ki, fp32 kd, float H_Limited, fp32 L_Limited)
 {
-    PID_Init_t->kp=kp;
-    PID_Init_t->ki=ki;
-    PID_Init_t->kd=kd;
-    PID_Init_t->H_Limited=H_Limited;
-    PID_Init_t->L_Limited=L_Limited;
+    PID_Init_t->kp = kp;
+    PID_Init_t->ki = ki;
+    PID_Init_t->kd = kd;
+    PID_Init_t->H_Limited = H_Limited;
+    PID_Init_t->L_Limited = L_Limited;
 }
-
 
 fp32 PIDcal(PIDTypeDef *pid)
 {
@@ -68,11 +67,9 @@ fp32 PIDcal(PIDTypeDef *pid)
     return pid->Output;
 }
 
-
-
 /**
  * @brief 位置速度双环pid，包含了防跑飞功能？
- * 
+ *
  * @param SpeedPid 速度环PID结构体指针
  * @param PoisionPid 位置环（外环）PID指针
  * @param current_speed 当前速度
@@ -82,33 +79,32 @@ fp32 PIDcal(PIDTypeDef *pid)
  */
 fp32 PID_Position_speed_Control(PIDTypeDef *SpeedPid, PIDTypeDef *PoisionPid, fp32 current_speed, fp32 current_poision, fp32 set_poision)
 {
-    if (PoisionPid->Circl_Cut < 2)//大概是跑两圈？
+    if (PoisionPid->Circl_Cut < 2) //大概是跑两圈？
     {
         PoisionPid->SetValues = set_poision;
 
         PoisionPid->CurrentValues = current_poision;
 
         SpeedPid->CurrentValues = current_speed;
-				if (PoisionPid->Last_CurrentValues - PoisionPid->CurrentValues > 3000 || PoisionPid->Last_CurrentValues - PoisionPid->CurrentValues < -3000)
+        if (PoisionPid->Last_CurrentValues - PoisionPid->CurrentValues > 3000 || PoisionPid->Last_CurrentValues - PoisionPid->CurrentValues < -3000)
             PoisionPid->Circl_Cut++;
         SpeedPid->SetValues = PIDcal(PoisionPid);
         fp32 output = PIDcal(SpeedPid);
         return output;
     }
-    else if (PoisionPid->Circl_Cut >= 2&&PoisionPid->Circl_Cut<10)//防跑飞刹车时间在这调
-    {	
-				PID_STOP.CurrentValues=current_speed;
-				PoisionPid->Circl_Cut++;
+    else if (PoisionPid->Circl_Cut >= 2 && PoisionPid->Circl_Cut < 10) //防跑飞刹车时间在这调
+    {
+        PID_STOP.CurrentValues = current_speed;
+        PoisionPid->Circl_Cut++;
         return PIDcal(&PID_STOP);
     }
-		else
-		{
-				PID_STOP.CurrentValues=current_speed;
-				PoisionPid->Circl_Cut = 0;
+    else
+    {
+        PID_STOP.CurrentValues = current_speed;
+        PoisionPid->Circl_Cut = 0;
         return PIDcal(&PID_STOP);
-		}
+    }
 }
-
 
 fp32 limit(fp32 object, fp32 H_Limitation, fp32 L_Limitation)
 {
@@ -119,3 +115,88 @@ fp32 limit(fp32 object, fp32 H_Limitation, fp32 L_Limitation)
     return object;
 }
 
+/************************** Dongguan-University of Technology -ACE**************************
+ * @brief 步进式PID控制设定值步进处理函数
+ *  当设定值发生较大的突变时，很容易产生超调而使系统不稳定。
+ *  为了解决这种阶跃变化造成的不利影响,采用步进式PID。
+ *  https://blog.csdn.net/foxclever/article/details/81151898
+ * @param vPID
+ * @param sp setposition
+ * @return float
+ ************************** Dongguan-University of Technology -ACE***************************/
+float step_in_processing(PIDTypeDef *vPID, float sp)
+{
+    // float stepIn = (vPID->maximum - vPID->minimum) * 0.1f + vPID->minimum;
+    float stepIn = vPID->stepIn;
+    float kFactor = 0.0f;
+
+    if (fabs(vPID->SetValues - sp) <= stepIn)
+    {
+        vPID->SetValues = sp;
+    }
+    else
+    {
+        if (vPID->SetValues - sp > 0)
+        {
+            kFactor = -1.0f;
+        }
+        else if (vPID->SetValues - sp < 0)
+        {
+            kFactor = 1.0f;
+        }
+        else
+        {
+            kFactor = 0.0f;
+        }
+
+        vPID->SetValues = vPID->SetValues + kFactor * stepIn;
+    }
+
+    return vPID->SetValues;
+}
+
+
+
+
+int32_t PID_regulator(PIDTypeDef *vPID, float actualValue)
+{
+    // error
+    vPID->error[1] = vPID->SetValues - vPID->CurrentValues;
+
+    if (vPID->Output > vPID->H_Limited)
+    {
+        if (vPID->error[1] <= 0)
+        {
+            vPID->Ierror += vPID->error[1];
+        }
+    }
+    else if (vPID->Output < vPID->L_Limited)
+    {
+        if (vPID->error[1] >= 0)
+        {
+            vPID->Ierror += vPID->error[1];
+        }
+    }
+    else
+    {
+        vPID->Ierror += vPID->error[1];
+    }
+
+    //积分限幅
+    vPID->Ierror=int32_limit(vPID->Ierror,vPID->max_iout,-vPID->max_iout);
+
+    vPID->Derror[0]=vPID->error[1]-vPID->error[0];
+
+    vPID->P_Out = (vPID->kp * vPID->error[1]);
+	vPID->I_out = (vPID->ki * vPID->Ierror);
+	vPID->D_Out = (vPID->kd * vPID->Derror[0]);
+
+    vPID->Output=vPID->P_Out+vPID->I_out+vPID->D_Out;
+
+    //输出限幅
+    vPID->Output=limit(vPID->Output, vPID->H_Limited, vPID->L_Limited);
+    //记录error
+    vPID->error[0]=vPID->error[1];
+    
+    return vPID->Output;
+}

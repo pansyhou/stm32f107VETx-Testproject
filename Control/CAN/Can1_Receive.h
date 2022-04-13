@@ -22,10 +22,10 @@ typedef enum
 	
 
     /* 在云台部分代码的can2处调用此枚举。 */
-		#if (gimbal_yaw_TO_chassis == 2)
+		#if (gimbal_yaw_to_chassis == 2)
 	    CAN_YAW_MOTOR_ID = 0x208,
 
-		#elif(gimbal_yaw_TO_chassis == 1)
+		#elif(gimbal_yaw_to_chassis == 1)
 		CAN_YAW_MOTOR_ID = 0x5ff,
 
 		#endif
@@ -59,5 +59,9 @@ void CAN1_Filter_Config(void);                                      //CAN1滤波
 void CAN1_Chassis_Receive(CAN_HandleTypeDef *hcan);                 //CAN1接收（大概是想收底盘四个电机
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);    //重定义CAN回调函数
 const void CAN1_Get_ChassisMotor_Pointer(void);                     //底盘电机获取
+const CAN_Motor_Measure_Data *Get_Pitch_Measure_point(void);
+const CAN_Motor_Measure_Data *Get_Fire_A_Measure_Point(void);
+const CAN_Motor_Measure_Data *Get_Fire_B_Measure_Point(void);
+
 #endif
 

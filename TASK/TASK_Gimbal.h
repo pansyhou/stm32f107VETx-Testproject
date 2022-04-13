@@ -154,11 +154,11 @@ typedef struct  //申明pitch轴电机变量
     PIDTypeDef pitch_up_auto_p_pid;  //pid
     PIDTypeDef pitch_up_auto_s_pid;  //pid
     #elif (PITCH_PID_MODE == 2)
-    PIDTypeDef pitch_p_pid;  //pid
-    PIDTypeDef pitch_s_pid;  //pid
+    PIDTypeDef pitch_p_pid;  //位置pid
+    PIDTypeDef pitch_s_pid;  //速度pid
 
-    PIDTypeDef pitch_auto_p_pid;  //pid
-    PIDTypeDef pitch_auto_s_pid;  //pid
+    PIDTypeDef pitch_auto_p_pid;  //位置pid
+    PIDTypeDef pitch_auto_s_pid;  //速度pid
     #endif
     float accel_up;
     float accel_down;
@@ -175,7 +175,7 @@ typedef struct  //申明pitch轴电机变量
 
     int16_t filt_output; //P轴滤波值
 
-    int16_t output;
+    int16_t output;//输出量
 
 } gimbal_pitch_control_t;
 
@@ -212,7 +212,7 @@ typedef struct
 
     VisionStatus_E VisionStatus;    // 敌人出现状态
     const Fire_task_t *Fire_task_control;
-   
+    
     gimbal_behaviour_e gimbal_behaviour;
 
     gimbal_pitch_control_t pitch_c;   //申明pitch轴电机变量
@@ -224,6 +224,15 @@ typedef struct
 } gimbal_control_t;
 
 
+
+/************函数声明**************/
+static void Gimbal_remote_mode_choose(gimbal_control_t *Gimbal_Mode_Choose_t);
+void gimbal_task_off(void);
+static void Gimbal_Control_Work(gimbal_control_t *Gimbal_CW_t);
+static void Gimbal_Pitch_Init(gimbal_control_t *Gimbal_Pitch_Init_t);
+static void Gimbal_Init(gimbal_control_t *Gimbal_Init_t);
+static void Gimbal_Init(gimbal_control_t *Gimbal_Init_t);
+void GIMBAL_TASK(void const *argument);
 
 
 #endif

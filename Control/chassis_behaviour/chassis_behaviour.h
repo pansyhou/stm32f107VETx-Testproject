@@ -33,6 +33,7 @@ void Chassis_Behaviour_Mode_Set(Chassis_Control_t *Chassis_Mode_Set_t);//底盘�
 static void Chassis_Behaviour_Stop(Chassis_Control_t *Chassis_Stop_t);//底盘无力模式
 static void Chassis_Behaviour_Auto(Chassis_Control_t *Chassis_Auto_t);//底盘自动模式    
 static void Chassis_Behaviour_RC_Mode(Chassis_Control_t *Chassis_RC_Mode_t);//底盘遥控器模式
+static void chassis_mode_choose(Chassis_Control_t *chassis_mode_choose_f);//底盘模式选择
 
 
 #endif

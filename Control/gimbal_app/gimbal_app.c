@@ -90,7 +90,7 @@ void Gimbal_app_CAN2_YAW_SendMsg(int16_t ESC_208)
 }
 
 /************************** Dongguan-University of Technology -ACE**************************
- * @brief yaw轴接CAN1，将云台计算好的输出发送到底盘板
+ * @brief yaw轴接CAN2，将云台计算好的输出发送到底盘板
  * 
  * @param ESC_208 
  ************************** Dongguan-University of Technology -ACE***************************/

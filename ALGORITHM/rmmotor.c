@@ -22,7 +22,6 @@
  * @param limit_values 限制电流值
  * @return int16_t 输出电流值
  ************************** Dongguan-University of Technology -ACE***************************/
-
 int16_t RM_Speed_PID(PIDTypeDef *SpeedPID_t, int16_t Set_speed, int16_t Actual_Speed, int16_t limit_values)
 {
     int16_t output;
@@ -51,7 +50,6 @@ int16_t RM_Speed_PID(PIDTypeDef *SpeedPID_t, int16_t Set_speed, int16_t Actual_S
  * @param limit_values
  * @return int16_t
  ************************** Dongguan-University of Technology -ACE***************************/
-
 int16_t RM_Speed_Position_PID(PIDTypeDef *SpeedPID_t, PIDTypeDef *PositionPID_t, int16_t Actual_Speed, int16_t Actual_Position, int16_t SetPosition, int16_t limit_values)
 {
     int16_t output;
@@ -71,7 +69,35 @@ int16_t RM_Speed_Position_PID(PIDTypeDef *SpeedPID_t, PIDTypeDef *PositionPID_t,
     return output;
 }
 
-//欠一个步进式PID
+/************************** Dongguan-University of Technology -ACE**************************
+ * @brief
+ *
+ * @param S_pid
+ * @param P_pid
+ * @param actual_Position
+ * @param actual_speed
+ * @param set_Position
+ * @param current_limit
+ * @return int16_t
+ ************************** Dongguan-University of Technology -ACE***************************/
+int16_t Motor_Position_Stepping(PIDTypeDef *S_pid, PIDTypeDef *P_pid, int16_t actual_Position, int16_t actual_speed, int16_t set_Position, int16_t current_limit)
+{
+    int32_t output;
+
+    step_in_processing(P_pid,set_Position);//步进式PID， 对设置值进行平滑处理
+
+    S_pid->SetValues=PID_regulator(P_pid,actual_Position);//速度环设定值由位置环处理
+
+    S_pid->CurrentValues=actual_speed;
+    S_pid->H_Limited=current_limit;
+    S_pid->L_Limited=-current_limit;
+
+    output=PIDcal(S_pid);
+    
+    return output;
+}
+
+
 
 /************************** Dongguan-University of Technology -ACE**************************
  * @brief RM电机一般算法
@@ -81,7 +107,6 @@ int16_t RM_Speed_Position_PID(PIDTypeDef *SpeedPID_t, PIDTypeDef *PositionPID_t,
  * @param gear_Ratio 减速比乘传动比
  * @param lap_encoder 单圈码盘值
  ************************** Dongguan-University of Technology -ACE***************************/
-
 void RM_Motor_Actual_Poisition(CAN_Motor_Measure_Data *rmMotor, int16_t gear_Ratio, int16_t lap_encoder)
 {
     if (rmMotor->first_Flag == 0) //第一次进入时记录码盘值
@@ -122,7 +147,6 @@ int16_t RM_Angle_Limiting_Int16(int16_t Angle_Err, int16_t lap_encoder)
  * @param lap_encoder
  * @return int32_t
  ************************** Dongguan-University of Technology -ACE***************************/
-
 int32_t RM_Check_CodeValue(int32_t value, int16_t gear_Ratio, int16_t lap_encoder)
 {
     if (value > (gear_Ratio * lap_encoder) / 2)

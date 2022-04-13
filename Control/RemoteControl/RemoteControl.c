@@ -87,25 +87,25 @@ void RC_Init(uint8_t *Rx1_Buff,uint8_t *Rx2_Buff,uint16_t Data_Buff_Lenth)
  ************************** Dongguan-University of Technology -ACE***************************/
 int RC_DataProcess(volatile const uint8_t *pData,RC_Ctl_t *RC_CTRL)
 {
-    RC_CTRL->rc.ch0 = ((int16_t)pData[0] | ((int16_t)pData[1] << 8)) & 0x07FF;
-    RC_CTRL->rc.ch1 = (((int16_t)pData[1] >> 3) | ((int16_t)pData[2] << 5)) & 0x07FF;
-    RC_CTRL->rc.ch2 = (((int16_t)pData[2] >> 6) | ((int16_t)pData[3] << 2) |
+    RC_CTRL->rc.ch[0] = ((int16_t)pData[0] | ((int16_t)pData[1] << 8)) & 0x07FF;
+    RC_CTRL->rc.ch[1] = (((int16_t)pData[1] >> 3) | ((int16_t)pData[2] << 5)) & 0x07FF;
+    RC_CTRL->rc.ch[2] = (((int16_t)pData[2] >> 6) | ((int16_t)pData[3] << 2) |
                       ((int16_t)pData[4] << 10)) & 0x07FF;
-    RC_CTRL->rc.ch3 = (((int16_t)pData[4] >> 1) | ((int16_t)pData[5] << 7)) & 0x07FF;
+    RC_CTRL->rc.ch[3] = (((int16_t)pData[4] >> 1) | ((int16_t)pData[5] << 7)) & 0x07FF;
 
     RC_CTRL->rc.s1 = ((pData[5] >> 4) & 0x000C) >> 2;
     RC_CTRL->rc.s2 = ((pData[5] >> 4) & 0x000C);
 
     RC_CTRL->mouse.x = ((int16_t)pData[6]) | ((int16_t)pData[7] << 8);
     RC_CTRL->mouse.y = ((int16_t)pData[8]) | ((int16_t)pData[9] << 8);
+    RC_CTRL->mouse.z = ((int16_t)pData[10]) | ((int16_t)pData[11] << 8);
 
     RC_CTRL->mouse.press_l=pData[12];
     RC_CTRL->mouse.press_r=pData[13];
 
-    RC_CTRL->key.v= ((int16_t)pData[14]);// | ((int16_t)pData[15] << 8);
-
-    
- return 0;
+    RC_CTRL->key.v= ((int16_t)pData[14]) | ((int16_t)pData[15] << 8);
+    RC_CTRL->rc.ch[4]=((int16_t)pData[16]) | ((int16_t)pData[17] << 8);
+    return 0;
 }
 
 
@@ -120,7 +120,7 @@ void RC_UART_IRQHandler(UART_HandleTypeDef *huart)
 {
     if(huart1.Instance->SR & UART_FLAG_RXNE )
     {
-        __HAL_UART_CLEAR_PEFLAG(&huart1);//先对PE位置0，不然读不到数据（？）
+        __HAL_UART_CLEAR_PEFLAG(&huart1);//先对PE位 置0，不然读不到数据（？）
     }
     else if (huart1.Instance->SR & UART_FLAG_IDLE)//进入空闲中断后开始转运数据？
     {
@@ -197,19 +197,19 @@ static int16_t RC_abs(int16_t num)
 ************************** Dongguan-University of Technology -ACE************************** */
 uint8_t RC_Check_Data_IS_ERROR(void)
 {
-    if (RC_abs(rc_ctl.rc.ch0)>RC_CHANNAL_ERROR_VALUE)
+    if (RC_abs(rc_ctl.rc.ch[0])>RC_CHANNAL_ERROR_VALUE)
     {
         goto error;
     }
-    if (RC_abs(rc_ctl.rc.ch1)>RC_CHANNAL_ERROR_VALUE)
+    if (RC_abs(rc_ctl.rc.ch[1])>RC_CHANNAL_ERROR_VALUE)
     {
         goto error;
     }
-    if (RC_abs(rc_ctl.rc.ch2)>RC_CHANNAL_ERROR_VALUE)
+    if (RC_abs(rc_ctl.rc.ch[2])>RC_CHANNAL_ERROR_VALUE)
     {
         goto error;
     }
-    if (RC_abs(rc_ctl.rc.ch3)>RC_CHANNAL_ERROR_VALUE)
+    if (RC_abs(rc_ctl.rc.ch[4])>RC_CHANNAL_ERROR_VALUE)
     {
         goto error;
     }
@@ -224,12 +224,21 @@ uint8_t RC_Check_Data_IS_ERROR(void)
     
     return 0;
 error:
-    rc_ctl.rc.ch0=0;
-    rc_ctl.rc.ch1=0;
-    rc_ctl.rc.ch2=0;
-    rc_ctl.rc.ch3=0;
+    rc_ctl.rc.ch[0]=0;
+    rc_ctl.rc.ch[1]=0;
+    rc_ctl.rc.ch[2]=0;
+    rc_ctl.rc.ch[3]=0;
+    rc_ctl.rc.ch[4]=0;
     
-
+    rc_ctl.rc.s1 = RC_SW_DOWN;
+    rc_ctl.rc.s2 = RC_SW_DOWN;
+    rc_ctl.mouse.x = 0;
+    rc_ctl.mouse.y = 0;
+    rc_ctl.mouse.z = 0;
+    rc_ctl.mouse.press_l = 0;
+    rc_ctl.mouse.press_r = 0;
+    rc_ctl.key.v = 0;
+    return 1;
 }
 
 /************************** Dongguan-University of Technology -ACE**************************
@@ -260,13 +269,15 @@ void RC_Restart(uint16_t dma_buf_num)
 void RC_DataReload(void)
 {
 
-    rc_ctl.rc.ch0=0;
-    rc_ctl.rc.ch1=0;
-    rc_ctl.rc.ch2=0;
-    rc_ctl.rc.ch3=0;
+    rc_ctl.rc.ch[0]=0;
+    rc_ctl.rc.ch[1]=0;
+    rc_ctl.rc.ch[2]=0;
+    rc_ctl.rc.ch[3]=0;
+    rc_ctl.rc.ch[4]=0;
     rc_ctl.mouse.x=0;
     rc_ctl.mouse.y=0;
     rc_ctl.mouse.z=0;
     rc_ctl.mouse.press_l=0;
     rc_ctl.mouse.press_r=0;
+    rc_ctl.key.v = 0;
 }

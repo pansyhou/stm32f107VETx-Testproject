@@ -1,13 +1,17 @@
 #include "Can1_Receive.h"
 
 //申明底盘四个电机变量
-static CAN_Motor_Measure_Data motor_Chassis[4];
-
+CAN_Motor_Measure_Data motor_Chassis[4];
+//声明拨弹电机ab变量
+static CAN_Motor_Measure_Data motor_Fire_A,motor_Fire_B;
+//声明pitch轴电机变量
+CAN_Motor_Measure_Data motor_Pitch;
 /************************** Dongguan-University of Technology -ACE**************************
  * @brief 文件包含以下内容：
  *      1.CAN1滤波器配置
  *      2.CAN1接收
  *      3.重定义的CAN回调函数
+ *      4.pitch轴接收函数
  *  
  ************************** Dongguan-University of Technology -ACE***************************/
 
@@ -122,4 +126,21 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
     {
         CAN2_Chassis_Receive(hcan);
     }
+}
+
+
+//获取各类指针
+const CAN_Motor_Measure_Data *Get_Pitch_Measure_point(void)
+{
+    return &motor_Pitch;
+}
+
+const CAN_Motor_Measure_Data *Get_Fire_A_Measure_Point(void)
+{
+    return &motor_Fire_A;
+}
+
+const CAN_Motor_Measure_Data *Get_Fire_B_Measure_Point(void)
+{
+    return &motor_Fire_B;
 }

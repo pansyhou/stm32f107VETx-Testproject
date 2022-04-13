@@ -3,6 +3,8 @@
 
 #include "SYSConfig.h"
 
+#define RAD2DEG     (57.295779513082320876798154814105f)  // 弧度转角度
+
 //运动加速度限制斜坡结构体
 typedef __packed struct
 {

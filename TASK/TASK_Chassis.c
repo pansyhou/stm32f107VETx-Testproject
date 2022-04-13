@@ -35,6 +35,16 @@ void Chassis_Task(void const *argument)
     {
         //底盘控制主函数
         Chassis_Control(&chassis_control);
+
+
+        taskENTER_CRITICAL(); //进入临界区
+        //底盘发送数据到云台
+        Chassis_SentTo_Gimbal(&chassis_control);
+
+
+        taskEXIT_CRITICAL();     
+        
+        vTaskDelay(CHASSIS_CONTROL_TIME);    
     }
 }
 
@@ -71,13 +81,15 @@ void Chassis_Init(Chassis_Control_t *Chassis_Init_t)
 
 /************************** Dongguan-University of Technology -ACE**************************
  * @brief 底盘控制函数
- *
+ *  @status 计算底盘和云台的差角,未完成
  * @param Chassis_Ctrl_t 整体底盘数据结构体
  ************************** Dongguan-University of Technology -ACE***************************/
 void Chassis_Control(Chassis_Control_t *Chassis_Ctrl_t)
 {
     RC_Check_Data_IS_ERROR(); //检查接收到的遥控器数据有没有误
 
+    //计算底盘和云台的差角,未完成
+    Chassis_Ctrl_t->Angel_Between_Chassis_Gimbal=Chassis_Ctrl_t->gimbal_re_data->chassis_gimbal_angel;
     Chassis_Motor_Data_Update(Chassis_Ctrl_t); //更新motor电机测量到的数据
 
     Chassis_RC_MODE_Set(Chassis_Ctrl_t); //遥控器模式检查选择
@@ -206,21 +218,48 @@ void Chassis_Accelerated_Control(int16_t *ch0, int16_t *ch1, int16_t *ch2)
     temp[0] = *ch0 - last_ch[0];
     temp[1] = *ch1 - last_ch[1];
     temp[2] = *ch1 - last_ch[2];
+    //下面是哨兵的
+    // if (chassis_control.Chassis_Mode == CHASSIS_AUTO) //底盘为自动模式
+    // {
+    //     if (float_abs(temp[0]) > TRANSLATION_ACCELERAD)
+    //         *ch0 = last_ch[0] + temp[0] / float_abs(temp[0]) * TRANSLATION_ACCELERAD;
+    //     if (float_abs(temp[1]) > STRAIGHT_ACCELERAD)
+    //         *ch1 = last_ch[1] + temp[1] / float_abs(temp[1]) * STRAIGHT_ACCELERAD;
+    // }
+    // if (chassis_control.Chassis_Mode == CHASSIS_REMOTECONTROL)//遥控模式
+    // {
+    //     if (float_abs(temp[0]) > TRANSLATION_ACCELERAD)
+    //         *ch0 = last_ch[0] + temp[0] / float_abs(temp[0]) * TRANSLATION_ACCELERAD;
 
-    if (chassis_control.Chassis_Mode == CHASSIS_AUTO) //底盘为自动模式
+    //     if (float_abs(temp[1]) > STRAIGHT_ACCELERAD)
+    //         *ch1 = last_ch[1] + temp[1] / float_abs(temp[1]) * STRAIGHT_ACCELERAD;
+    // }
+
+    if(chassis_control.RC_Chassis_Data->rc.s2==RC_SW_UP)//遥控模式
     {
         if (float_abs(temp[0]) > TRANSLATION_ACCELERAD)
             *ch0 = last_ch[0] + temp[0] / float_abs(temp[0]) * TRANSLATION_ACCELERAD;
         if (float_abs(temp[1]) > STRAIGHT_ACCELERAD)
             *ch1 = last_ch[1] + temp[1] / float_abs(temp[1]) * STRAIGHT_ACCELERAD;
+
+        if (chassis_control.Chassis_Mode == CHASSIS_TWIST_WAIST || chassis_control.Chassis_Mode == CHASSIS_ROTATION) //扭腰模式下才用旋转加速度限制
+        {
+            if (float_abs(temp[2]) > ROTATING_ACCELERAD)
+                *ch2 = last_ch[2] + temp[2] / float_abs(temp[2]) * ROTATING_ACCELERAD;
+        }
     }
-    if (chassis_control.Chassis_Mode == CHASSIS_REMOTECONTROL)//遥控模式
+    if(chassis_control.RC_Chassis_Data->rc.s2==RC_SW_MID)//键盘模式
     {
         if (float_abs(temp[0]) > TRANSLATION_ACCELERAD)
             *ch0 = last_ch[0] + temp[0] / float_abs(temp[0]) * TRANSLATION_ACCELERAD;
-
         if (float_abs(temp[1]) > STRAIGHT_ACCELERAD)
             *ch1 = last_ch[1] + temp[1] / float_abs(temp[1]) * STRAIGHT_ACCELERAD;
+
+        if (chassis_control.Chassis_Mode == CHASSIS_TWIST_WAIST) //扭腰模式下才用旋转加速度限制
+        {
+            if (float_abs(temp[2]) > ROTATING_ACCELERAD)
+                *ch2 = last_ch[2] + temp[2] / float_abs(temp[2]) * ROTATING_ACCELERAD;
+        }
     }
 
     last_ch[0]=*ch0;
@@ -232,6 +271,10 @@ void Chassis_Accelerated_Control(int16_t *ch0, int16_t *ch1, int16_t *ch2)
 
 void Chassis_set_remote(Chassis_Control_t *chassis_set_t,int16_t ch0,int16_t ch1,int16_t ch2)
 {
+#ifdef POWER_LIMIT //功率限制
+    chassis_power_limit_control(chassis_set_f);//TODO:缺功率限制函数
+#endif
+
     //先对输入量进行斜坡函数处理
     Chassis_Accelerated_Control(&ch0,&ch1,&ch2);
 
@@ -248,3 +291,5 @@ void Chassis_set_remote(Chassis_Control_t *chassis_set_t,int16_t ch0,int16_t ch1
 
     }
 }
+
+

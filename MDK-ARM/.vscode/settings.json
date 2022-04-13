@@ -16,7 +16,16 @@
         "maths.h": "c",
         "task.h": "c",
         "chassis_app.h": "c",
-        "task_safe.h": "c"
+        "task_safe.h": "c",
+        "task_gimbal.h": "c",
+        "task_fire.h": "c",
+        "can2_receive.h": "c",
+        "automatic_strike.h": "c",
+        "gimbal_behaviour.h": "c",
+        "usart.h": "c",
+        "main.h": "c",
+        "list_of_function.h": "c",
+        "stddef.h": "c"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }
